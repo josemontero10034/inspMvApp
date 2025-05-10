@@ -1,19 +1,15 @@
-export type informationForm = {
-  title: string;
-  evaluationByCheckbox: Array<{
-    question: string;
-  }>;
-};
+import type { FormDataStructure } from "./types";
+
 
 export interface StructureEvaluationProps {
-  value: informationForm[];
-  // onChange: (newValue: informationForm[]) => void;
+  value: FormDataStructure;
+   onChange: (newValue: FormDataStructure) => void;
 }
 
 const StrucutureEvaluation: React.FC<StructureEvaluationProps> = ({
-  value,
+  value , onChange
 }) => {
-  return value.map((item, index) => (
+  return value.evaluationInformationOptions.map((item, index) => (
     <div key={index}>
       <table className="w-full border-1 border-black">
         <thead>
@@ -32,6 +28,22 @@ const StrucutureEvaluation: React.FC<StructureEvaluationProps> = ({
                 <input
                   type="checkbox"
                   className="w-fit border-2 border-black"
+                  value={undefined}
+                  checked={question.isTrue}
+                  onChange={(e) => {
+                    console.log(e.target.checked);
+                    const updatedOptions = value.evaluationInformationOptions.map((opt, optIndex) => 
+                      optIndex === index
+                        ? {
+                            ...opt,
+                            evaluationByCheckbox: opt.evaluationByCheckbox.map((q, qIndex) =>
+                              qIndex === index ? { ...q, isTrue: e.target.checked } : q
+                            ),
+                          }
+                        : opt
+                    );
+                    onChange({ ...value, evaluationInformationOptions: updatedOptions });
+                  }}
                 />
               </td>
               <td>

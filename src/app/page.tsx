@@ -1,11 +1,8 @@
-import Link from "next/link";
-import { LatestPost } from "~/app/_components/post";
 import { auth } from "~/server/auth";
-import { api, HydrateClient } from "~/trpc/server";
+import { api } from "~/trpc/server";
 import ButtonMoveForm from "./_components/button/button-move-form";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
   const session = await auth();
 
   if (session?.user) {
@@ -27,10 +24,7 @@ export default async function Home() {
         />
       </div>
       <div className="mt-8 grid w-screen grid-cols-1 justify-items-center gap-4">
-        <ButtonMoveForm
-          label="Formulario"
-          
-        />
+        <ButtonMoveForm label="Formulario" />
         <button
           type="button"
           className="h-12 w-[200px] rounded-full bg-gradient-to-r from-red-500 to-red-700 py-2 font-semibold text-white shadow-md transition-all hover:from-red-700 hover:to-red-500"
