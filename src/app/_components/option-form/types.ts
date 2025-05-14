@@ -7,13 +7,14 @@ export type FormDataStructure = {
   licenseNumberAsked: string;
   secuence: number;
   date: Date;
-  evaluationInformationOptions: informationForm[]
+  evaluationInformationOptions: informationForm[];
 };
 
 export type informationForm = {
-    title: string;
-    evaluationByCheckbox: {
-        question: string;
-        isTrue: undefined | boolean;
-    }[];
-}
+  title: string;
+  evaluationByCheckbox: {
+    question: string;
+    isTrue: boolean;
+    isFalse: boolean;
+  }[];
+};

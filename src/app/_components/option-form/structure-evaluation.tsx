@@ -1,13 +1,13 @@
 import type { FormDataStructure } from "./types";
 
-
 export interface StructureEvaluationProps {
   value: FormDataStructure;
-   onChange: (newValue: FormDataStructure) => void;
+  onChange: (newValue: FormDataStructure) => void;
 }
 
 const StrucutureEvaluation: React.FC<StructureEvaluationProps> = ({
-  value , onChange
+  value,
+  onChange,
 }) => {
   return value.evaluationInformationOptions.map((item, index) => (
     <div key={index}>
@@ -20,29 +20,40 @@ const StrucutureEvaluation: React.FC<StructureEvaluationProps> = ({
           </tr>
         </thead>
         <tbody>
-          {item.evaluationByCheckbox.map((question, index) => (
-            <tr key={index}>
+          {item.evaluationByCheckbox.map((question, indexs) => (
+            <tr key={indexs}>
               <td>{question.question}</td>
               <td>
                 si{" "}
                 <input
                   type="checkbox"
+                  id="si"
+                  name="si"
                   className="w-fit border-2 border-black"
-                  value={undefined}
                   checked={question.isTrue}
                   onChange={(e) => {
-                    console.log(e.target.checked);
-                    const updatedOptions = value.evaluationInformationOptions.map((opt, optIndex) => 
-                      optIndex === index
-                        ? {
-                            ...opt,
-                            evaluationByCheckbox: opt.evaluationByCheckbox.map((q, qIndex) =>
-                              qIndex === index ? { ...q, isTrue: e.target.checked } : q
-                            ),
-                          }
-                        : opt
-                    );
-                    onChange({ ...value, evaluationInformationOptions: updatedOptions });
+                    const updatedOptions =
+                      value.evaluationInformationOptions.map((opt, optIndex) =>
+                        optIndex === index
+                          ? {
+                              ...opt,
+                              evaluationByCheckbox:
+                                opt.evaluationByCheckbox.map((q, qIndex) =>
+                                  qIndex === indexs
+                                    ? {
+                                        ...q,
+                                        isTrue: e.target.checked,
+                                        isFalse: false,
+                                      }
+                                    : q,
+                                ),
+                            }
+                          : opt,
+                      );
+                    onChange({
+                      ...value,
+                      evaluationInformationOptions: updatedOptions,
+                    });
                   }}
                 />
               </td>
@@ -50,7 +61,34 @@ const StrucutureEvaluation: React.FC<StructureEvaluationProps> = ({
                 no{" "}
                 <input
                   type="checkbox"
+                  id="no"
+                  name="no"
                   className="w-fit border-2 border-black"
+                  checked={question.isFalse}
+                  onChange={(e) => {
+                    const updatedOptions =
+                      value.evaluationInformationOptions.map((opt, optIndex) =>
+                        optIndex === index
+                          ? {
+                              ...opt,
+                              evaluationByCheckbox:
+                                opt.evaluationByCheckbox.map((q, qIndex) =>
+                                  qIndex === indexs
+                                    ? {
+                                        ...q,
+                                        isTrue: false,
+                                        isFalse: e.target.checked,
+                                      }
+                                    : q,
+                                ),
+                            }
+                          : opt,
+                      );
+                    onChange({
+                      ...value,
+                      evaluationInformationOptions: updatedOptions,
+                    });
+                  }}
                 />
               </td>
             </tr>
