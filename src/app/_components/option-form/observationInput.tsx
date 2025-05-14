@@ -1,6 +1,11 @@
 import React from "react";
+import type { StructureEvaluationProps } from "./structure-evaluation";
 
-const ObservationInput: React.FC = () => {
+const ObservationInput: React.FC<StructureEvaluationProps> = ({
+  value: values,
+  onChange,
+}) => {
+  const { observation } = values;
   return (
     <div>
       <table className="w-full border-1 border-black">
@@ -14,7 +19,16 @@ const ObservationInput: React.FC = () => {
         <tbody>
           <tr>
             <td>
-              <textarea className="border-2 border-black w-full h-32" />
+              <textarea
+                className="h-32 w-full border-2 border-black"
+                value={observation}
+                onChange={(e) => {
+                  onChange({
+                    ...values,
+                    observation: e.target.value,
+                  });
+                }}
+              />
             </td>
           </tr>
         </tbody>

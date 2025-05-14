@@ -21,6 +21,21 @@ const FormSupervisor: React.FC = () => {
     secuence: 0,
     date: new Date(),
     evaluationInformationOptions,
+    observation: "",
+    bossSign: "",
+    bossCodia: "",
+    bossDate: new Date(),
+    inspector1Name: "",
+    inspector1Sign: "",
+    inspector1Codia: "",
+    inspector1Date: new Date(),
+    inspector2Sign: "",
+    inspector2Codia: "",
+    inspector2Date: new Date(),
+    inspector3Sign: "",
+    inspector3Codia: "",
+    inspector3Date: new Date(),
+    inspector2Name: "",inspector3Name: "",
 
   });
 
@@ -37,8 +52,8 @@ const FormSupervisor: React.FC = () => {
     >
       <GeneralData onChange={setFormData} value={formData} />
       <StrucutureEvaluation value={formData} onChange={setFormData}/>
-      <ObservationInput />
-      <NameAndSigns />
+      <ObservationInput value = {formData} onChange = {setFormData}/>
+      <NameAndSigns value = {formData} onChange = {setFormData} />
       <div className="flex items-center justify-center">
         <ButtonPrintForm
           onClick={() => {
