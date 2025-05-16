@@ -23,6 +23,8 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
     inspector1Name,
     inspector2Name,
   } = value;
+
+  
   return (
     <table className="w-full border-1 border-black">
       <thead>
