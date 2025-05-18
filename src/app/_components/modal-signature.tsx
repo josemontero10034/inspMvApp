@@ -26,49 +26,39 @@ const ModalSignature: React.FC<ModalSignatureProps> = ({
   const [signature, setSignature] = useState<string>("");
 
   return (
-    <>
-      <React.Fragment>
-        <Button variant="outlined" onClick={onOpen} className="w-[5px]">
-          Colocar Firma
-        </Button>
-        <Dialog
-        className="w-[90%] h-[90%] m-auto"
-        maxWidth= {false}
-          fullWidth={true}
-          open={isOpen}
-          onClose={() => {
-            onClose();
+    <Dialog
+      className="h-screen"
+      maxWidth={false}
+      fullWidth={true}
+      open={isOpen}
+      onClose={onClose}
+
+    >
+      <DialogTitle id="alert-dialog-title">
+        Firma del inspector
+      </DialogTitle>
+      <DialogContent>
+        <SignatureCanvas
+          ref={sigCanvas}
+          canvasProps={{
+            className: "w-full h-full border-2 border-black bg-white",
           }}
-       
-        >
-          <DialogTitle id="alert-dialog-title">
-            Firma del inspector
-          </DialogTitle>
-          <DialogContent >
-            <SignatureCanvas
-              ref={sigCanvas}
-              canvasProps={{
-                className: "w-full h-full border-2 border-black bg-white",
-              }}
-              onEnd={() => {
-                if (sigCanvas.current) {
-                  console.log("Signature saved");
-                  setSignature(
-                    sigCanvas.current.getTrimmedCanvas().toDataURL(),
-                  );
-                }
-              }}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={onClose}>Guardar</Button>
-            <Button onClick={onClose} autoFocus>
-              Cerrar
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </React.Fragment>
-    </>
+          onEnd={() => {
+            if (sigCanvas.current) {
+              setSignature(
+                sigCanvas.current.getTrimmedCanvas().toDataURL(),
+              );
+            }
+          }}
+        />
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose}>Guardar</Button>
+        <Button onClick={onClose} autoFocus>
+          Cerrar
+        </Button>
+      </DialogActions>
+    </Dialog>
   );
 };
 

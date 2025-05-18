@@ -7,6 +7,7 @@ import NameAndSigns from "./option-form/name-and-signs";
 import ButtonPrintForm from "./button/button-print-form";
 import evaluationInformationOptions from "~/MOCK_DATA/evaluation-data";
 import type { FormDataStructure } from "./option-form/types";
+import ModalSignature from "./modal-signature";
 
 
 
@@ -39,30 +40,31 @@ const FormSupervisor: React.FC = () => {
 
   });
 
+    const [open, setOpen] = useState(true);
+  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted", formData);
     // Handle form submission logic here, e.g., send data to an API or process it
   };
 
-  return (
-    <form
-      className="m-auto mr-2 ml-2  w-fit border-2 border-black"
+  return (   <><form
+      className="m-auto mr-2 ml-2  w-fit border-2 border-black "
       onSubmit={handleSubmit}
     >
       <GeneralData onChange={setFormData} value={formData} />
-      <StrucutureEvaluation value={formData} onChange={setFormData}/>
-      <ObservationInput value = {formData} onChange = {setFormData}/>
-      <NameAndSigns value = {formData} onChange = {setFormData} />
+      <StrucutureEvaluation value={formData} onChange={setFormData} />
+      <ObservationInput value={formData} onChange={setFormData} />
+      <NameAndSigns value={formData} onChange={setFormData} />
       <div className="flex items-center justify-center">
         <ButtonPrintForm
           onClick={() => {
             console.log("Print form clicked");
             // Implement print functionality here
-          }}
-        />
+          } } />
       </div>
-    </form>
+    </form></>
   );
 };
 
