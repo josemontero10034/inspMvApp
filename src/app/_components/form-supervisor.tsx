@@ -47,7 +47,7 @@ const FormSupervisor: React.FC = () => {
 
   return (
     <form
-      className="m-auto mr-2 ml-2 w-fit border-2 border-black"
+      className="m-auto mr-2 ml-2  w-fit border-2 border-black"
       onSubmit={handleSubmit}
     >
       <GeneralData onChange={setFormData} value={formData} />

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { use, useEffect, useState } from "react";
 import type { StructureEvaluationProps } from "./structure-evaluation";
+import ModalSignature from "../modal-signature";
+import CustomSignature from "../custom-signature";
 
 const NameAndSigns: React.FC<StructureEvaluationProps> = ({
   value,
@@ -23,10 +25,14 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
     inspector1Name,
     inspector2Name,
   } = value;
+  const [open, setOpen] = useState(false);
 
-  
+  useEffect(() => {
+    console.log( open);
+  }, [open]);
+
   return (
-    <table className="w-full border-1 border-black">
+    <table className="w-[100%] border-1 border-black">
       <thead>
         <tr>
           <th colSpan={5} className="bg-black text-center text-white">
@@ -35,13 +41,13 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>{"  "}</td>
-          <td>Nombre(s) y Apellidos(s)</td>
-          <td>Firma</td>
-          <td>Codia</td>
-          <td>Fecha</td>
-        </tr>
+      <tr> 
+        <td className="border-2 border-black text-center"></td>
+        <td className="border-2 border-black text-center">Nombres y Apellidos</td>
+        <td className="border-2 border-black text-center">Firma</td>
+        <td className="border-2 border-black text-center">Codia</td>
+        <td className="border-2 border-black text-center ">Fecha</td>
+      </tr>
         <tr>
           <td className="border-2 border-black">
             {"Director o encargado de obra"}
@@ -49,7 +55,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="bossName"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={bossName}
               onChange={(e) => {
@@ -63,7 +69,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="bossSign"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={bossSign}
               onChange={(e) => {
@@ -77,7 +83,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="bossCodia"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={bossCodia}
               onChange={(e) => {
@@ -89,9 +95,9 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
             />
           </td>
           <td>
-            <input
+            {/* <input
               id="bossDate"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="date"
               value={bossDate.toISOString().split("T")[0]}
               onChange={(e) => {
@@ -100,7 +106,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
                   bossDate: new Date(e.target.value),
                 });
               }}
-            />
+            /> */}
           </td>
         </tr>
         <tr>
@@ -110,7 +116,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="inspector1Name"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector1Name}
               onChange={(e) => {
@@ -122,23 +128,30 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
             />
           </td>
           <td>
-            <input
-              id="inspector1Sign"
-              className="w-[90%] border-2 border-black"
-              type="text"
-              value={inspector1Sign}
-              onChange={(e) => {
-                onChange({
-                  ...value,
-                  inspector1Sign: e.target.value,
-                });
+            {/* <ModalSignature
+              isOpen = {open}
+              onClose={() => {
+                setOpen(false);
+                console.log("cerrar")
+                console.log(open);
+          
+                // Handle the signature close logic here
               }}
-            />
+              onSave={() => {
+                setOpen(false);
+                // Handle the signature save logic here
+              }}
+              onOpen={() => {
+                setOpen(true);
+                console.log("abrir")
+                console.log(open);
+              }}
+            /> */}
           </td>
           <td>
             <input
               id="inspector1Codia"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector1Codia}
               onChange={(e) => {
@@ -150,9 +163,9 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
             />
           </td>
           <td>
-            <input
+            {/* <input
               id="inspector1Date"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="date"
               value={inspector1Date.toISOString().split("T")[0]}
               onChange={(e) => {
@@ -161,7 +174,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
                   inspector1Date: new Date(e.target.value),
                 });
               }}
-            />
+            /> */}
           </td>
         </tr>
 
@@ -169,7 +182,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="inspector2Name"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector2Name}
               onChange={(e) => {
@@ -183,7 +196,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="inspector2Sign"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector2Sign}
               onChange={(e) => {
@@ -197,7 +210,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="inspector2Codia"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector2Codia}
               onChange={(e) => {
@@ -209,9 +222,9 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
             />
           </td>
           <td>
-            <input
-              id="inspector3Date"
-              className="w-[90%] border-2 border-black"
+            {/* <input
+              id="inspector2Date"
+              className="w-[10%] border-2 border-black"
               type="date"
               value={inspector2Date.toISOString().split("T")[0]}
               onChange={(e) => {
@@ -220,14 +233,14 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
                   inspector2Date: new Date(e.target.value),
                 });
               }}
-            />
+            /> */}
           </td>
         </tr>
         <tr>
           <td>
             <input
               id="inspector3Name"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector3Name}
               onChange={(e) => {
@@ -241,7 +254,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="inspector3Sign"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector3Sign}
               onChange={(e) => {
@@ -255,7 +268,7 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
           <td>
             <input
               id="inspector3Codia"
-              className="w-[90%] border-2 border-black"
+              className="w-[10%] border-2 border-black"
               type="text"
               value={inspector3Codia}
               onChange={(e) => {
@@ -266,10 +279,12 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
               }}
             />
           </td>
-          <td>
+          <td >
+            <div className="bg-red-500 min-w-[45px] flex ">
+
             <input
               id="inspector3Date"
-              className="w-[90%] border-2 border-black"
+              className=" min-w-[45px] border-2 border-black"
               type="date"
               value={inspector3Date.toISOString().split("T")[0]}
               onChange={(e) => {
@@ -279,6 +294,8 @@ const NameAndSigns: React.FC<StructureEvaluationProps> = ({
                 });
               }}
             />
+
+            </div>
           </td>
         </tr>
       </tbody>
