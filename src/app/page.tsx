@@ -25,12 +25,6 @@ export default async function Home() {
       </div>
       <div className="mt-8 grid w-screen grid-cols-1 justify-items-center gap-4">
         <ButtonMoveForm label="Formulario" />
-        <button
-          type="button"
-          className="h-12 w-[200px] rounded-full bg-gradient-to-r from-red-500 to-red-700 py-2 font-semibold text-white shadow-md transition-all hover:from-red-700 hover:to-red-500"
-        >
-          Informe
-        </button>
       </div>
     </>
   );

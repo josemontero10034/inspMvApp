@@ -2,11 +2,11 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-interface ButtonMoveFormProps {
+export interface ButtonMoveProps {
 label: string;
 }
 
-const ButtonMoveForm: React.FC<ButtonMoveFormProps> = ({  label }) => {
+const ButtonMoveForm: React.FC<ButtonMoveProps> = ({  label }) => {
 
     const route = useRouter();
     const handleClick = () => {
