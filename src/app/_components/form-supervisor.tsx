@@ -9,8 +9,6 @@ import evaluationInformationOptions from "~/MOCK_DATA/evaluation-data";
 import type { FormDataStructure } from "./option-form/types";
 import ModalSignature from "./modal-signature";
 
-
-
 const FormSupervisor: React.FC = () => {
   const [formData, setFormData] = useState<FormDataStructure>({
     projectName: "",
@@ -23,25 +21,24 @@ const FormSupervisor: React.FC = () => {
     date: new Date(),
     evaluationInformationOptions,
     observation: "",
-    bossSign: "",
+    bossSign: null,
     bossCodia: "",
     bossDate: new Date(),
     inspector1Name: "",
-    inspector1Sign: "",
+    inspector1Sign: null,
     inspector1Codia: "",
     inspector1Date: new Date(),
-    inspector2Sign: "",
+    inspector2Sign: null,
     inspector2Codia: "",
     inspector2Date: new Date(),
-    inspector3Sign: "",
+    inspector3Sign: null,
     inspector3Codia: "",
     inspector3Date: new Date(),
-    inspector2Name: "",inspector3Name: "",
-
+    inspector2Name: "",
+    inspector3Name: "",
   });
 
-    const [open, setOpen] = useState(true);
-  
+  const [open, setOpen] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,22 +46,26 @@ const FormSupervisor: React.FC = () => {
     // Handle form submission logic here, e.g., send data to an API or process it
   };
 
-  return (   <><form
-      className="m-auto mr-2 ml-2  w-fit border-2 border-black "
-      onSubmit={handleSubmit}
-    >
-      <GeneralData onChange={setFormData} value={formData} />
-      <StrucutureEvaluation value={formData} onChange={setFormData} />
-      <ObservationInput value={formData} onChange={setFormData} />
-      <NameAndSigns value={formData} onChange={setFormData} />
-      <div className="flex items-center justify-center">
-        <ButtonPrintForm
-          onClick={() => {
-            console.log("Print form clicked");
-            // Implement print functionality here
-          } } />
-      </div>
-    </form></>
+  return (
+    <>
+      <form
+        className="m-auto mr-2 ml-2 w-fit border-2 border-black"
+        onSubmit={handleSubmit}
+      >
+        <GeneralData onChange={setFormData} value={formData} />
+        <StrucutureEvaluation value={formData} onChange={setFormData} />
+        <ObservationInput value={formData} onChange={setFormData} />
+        <NameAndSigns value={formData} onChange={setFormData} />
+        <div className="flex items-center justify-center">
+          <ButtonPrintForm
+            onClick={() => {
+              console.log("Print form clicked");
+              // Implement print functionality here
+            }}
+          />
+        </div>
+      </form>
+    </>
   );
 };
 

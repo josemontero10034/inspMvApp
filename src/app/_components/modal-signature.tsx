@@ -8,36 +8,50 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
-import { on } from "events";
 
 interface ModalSignatureProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpen: () => void;
   onSave: (signatureData: string) => void;
+  signature: string | null;
+  setSignature: (signature: string | null) => void;
 }
 const ModalSignature: React.FC<ModalSignatureProps> = ({
   isOpen,
   onClose,
-  onOpen,
   onSave,
+  signature,
+  setSignature,
 }) => {
   const sigCanvas = useRef<SignatureCanvas>(null);
-  const [signature, setSignature] = useState<string>("");
+ 
+
+  const handlerOnSave = () => {
+    if (signature) {
+      onSave(signature);
+    } else {
+      console.error("No signature data available");
+    }
+  };
+  const handlerOnClear = () => {
+    if (sigCanvas.current) {
+      sigCanvas.current.clear();
+      setSignature(null);
+    }
+  };
 
   return (
     <Dialog
-      className="h-screen"
+      className="fixed transform translate-y-1/2 bg-white  z-50"
+    fullWidth
       maxWidth={false}
-      fullWidth={true}
+      disableScrollLock
       open={isOpen}
       onClose={onClose}
 
     >
-      <DialogTitle id="alert-dialog-title">
-        Firma del inspector
-      </DialogTitle>
-      <DialogContent>
+      <DialogTitle id="alert-dialog-title">Firma del inspector</DialogTitle>
+      <DialogContent className="h-[300px]">
         <SignatureCanvas
           ref={sigCanvas}
           canvasProps={{
@@ -45,15 +59,14 @@ const ModalSignature: React.FC<ModalSignatureProps> = ({
           }}
           onEnd={() => {
             if (sigCanvas.current) {
-              setSignature(
-                sigCanvas.current.getTrimmedCanvas().toDataURL(),
-              );
+              setSignature(sigCanvas.current.getTrimmedCanvas().toDataURL());
             }
           }}
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose}>Guardar</Button>
+        <Button onClick={handlerOnSave}>Guardar</Button>
+        <Button onClick={handlerOnClear}>Limpiar</Button>
         <Button onClick={onClose} autoFocus>
           Cerrar
         </Button>
