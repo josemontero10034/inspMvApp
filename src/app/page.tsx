@@ -1,6 +1,7 @@
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
 import ButtonMoveForm from "./_components/button/button-move-form";
+import ButtonMoveReport from "./_components/button/button-move-report";
 
 export default async function Home() {
   const session = await auth();
@@ -25,6 +26,7 @@ export default async function Home() {
       </div>
       <div className="mt-8 grid w-screen grid-cols-1 justify-items-center gap-4">
         <ButtonMoveForm label="Formulario" />
+        <ButtonMoveReport label="Reporte" />
       </div>
     </>
   );
