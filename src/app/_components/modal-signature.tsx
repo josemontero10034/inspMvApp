@@ -42,16 +42,14 @@ const ModalSignature: React.FC<ModalSignatureProps> = ({
 
   return (
     <Dialog
-      className="fixed transform translate-y-1/2 bg-white  z-50"
-    fullWidth
-      maxWidth={false}
-      disableScrollLock
+      className=""
+      sx={{ "& .MuiDialog-container": { alignItems: "flex-end" } }}
       open={isOpen}
       onClose={onClose}
 
     >
       <DialogTitle id="alert-dialog-title">Firma del inspector</DialogTitle>
-      <DialogContent className="h-[300px]">
+      <DialogContent className="h-[10%]">
         <SignatureCanvas
           ref={sigCanvas}
           canvasProps={{

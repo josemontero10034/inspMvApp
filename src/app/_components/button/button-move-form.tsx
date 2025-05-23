@@ -5,6 +5,8 @@ import React from 'react';
 export interface ButtonMoveProps {
 label: string;
 }
+// This component is used to navigate to the form page
+// It takes a label as a prop and uses the Next.js router to navigate to the form page when clicked
 
 const ButtonMoveForm: React.FC<ButtonMoveProps> = ({  label }) => {
 

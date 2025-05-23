@@ -6,6 +6,8 @@ export interface ButtonMoveProps {
 label: string;
 }
 
+// This component is used to navigate to the report page
+// It takes a label as a prop and uses the Next.js router to navigate to the report page when clicked
 const ButtonMoveReport: React.FC<ButtonMoveProps> = ({  label }) => {
 
     const route = useRouter();
