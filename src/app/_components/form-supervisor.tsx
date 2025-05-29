@@ -7,7 +7,8 @@ import NameAndSigns from "./option-form/name-and-signs";
 import ButtonPrintForm from "./button/button-print-form";
 import evaluationInformationOptions from "~/MOCK_DATA/evaluation-data";
 import type { FormDataStructure } from "./option-form/types";
-import ModalSignature from "./modal-signature";
+import createDocument from "~/server/pdocx";
+
 
 const FormSupervisor: React.FC = () => {
   const [formData, setFormData] = useState<FormDataStructure>({
@@ -38,12 +39,12 @@ const FormSupervisor: React.FC = () => {
     inspector3Name: "",
   });
 
-  const [open, setOpen] = useState(true);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted", formData);
     // Handle form submission logic here, e.g., send data to an API or process it
+createDocument(formData);
+
   };
 
   return (
@@ -64,6 +65,9 @@ const FormSupervisor: React.FC = () => {
             }}
           />
         </div>
+        <a href="/form-supervisor.docx" download="form-supervisor.docx">
+    Descargar documento
+</a>
       </form>
     </>
   );
