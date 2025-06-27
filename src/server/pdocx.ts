@@ -35,9 +35,19 @@ const createDocument = (formData: FormDataStructure) => {
               new TableRow({
                 children: [
                   new TableCell({
-                    children: [new Paragraph("Datos Generales")],
+                    children: [
+                      new Paragraph({
+                        children: [new TextRun("DATOS GENERALES")],
+                        alignment: "center",
+                      }),
+                    ],
                     verticalAlign: VerticalAlign.CENTER,
-                    columnSpan: 4,
+                    columnSpan: 5,
+                    shading: {
+                      type: "clear",
+                      color: "auto",
+                      fill: "000000", // black background
+                    },
                   }),
                 ],
               }),
@@ -46,6 +56,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph("Nombre del proyecto")],
                     verticalAlign: VerticalAlign.CENTER,
+                    width: { size: 500, type: "auto" },
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.projectName)],
@@ -58,6 +69,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph(formData.licenseNumber)],
                     verticalAlign: VerticalAlign.CENTER,
+                    columnSpan: 2,
                   }),
                 ],
               }),
@@ -66,6 +78,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph("Nivel a inspeccionar")],
                     verticalAlign: VerticalAlign.CENTER,
+                    width: { size: 500, type: "auto" },
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.levelInspection)],
@@ -78,6 +91,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph(formData.licenseNumberAsked)],
                     verticalAlign: VerticalAlign.CENTER,
+                    columnSpan: 2,
                   }),
                 ],
               }),
@@ -86,6 +100,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph("Encargado de obra")],
                     verticalAlign: VerticalAlign.CENTER,
+                    width: { size: 500, type: "auto" },
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.bossName)],
@@ -100,6 +115,7 @@ const createDocument = (formData: FormDataStructure) => {
                       new Paragraph(formData.date.toLocaleDateString()),
                     ],
                     verticalAlign: VerticalAlign.CENTER,
+                    columnSpan: 2,
                   }),
                 ],
               }),
@@ -108,14 +124,19 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph("Dirección")],
                     verticalAlign: VerticalAlign.CENTER,
+                    width: { size: 500, type: "auto" },
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.location)],
                     verticalAlign: VerticalAlign.CENTER,
-                    columnSpan: 3,
+                    columnSpan: 4,
                   }),
                 ],
               }),
+            ],
+          }),
+          new Table({
+            rows: [
               ...formData.evaluationInformationOptions.flatMap((option) => [
                 new TableRow({
                   children: [
@@ -129,11 +150,13 @@ const createDocument = (formData: FormDataStructure) => {
                               color: "FFFFFF",
                             }),
                           ],
+                          alignment: "center",
                         }),
                       ],
                       verticalAlign: VerticalAlign.CENTER,
-                      columnSpan: 4,
-                      textDirection: "lrTb", shading: {
+                      columnSpan: 5,
+                      textDirection: "lrTb",
+                      shading: {
                         type: "clear",
                         color: "auto",
                         fill: "000000", // black background
@@ -147,6 +170,7 @@ const createDocument = (formData: FormDataStructure) => {
                       new TableCell({
                         children: [new Paragraph(checkbox.question)],
                         verticalAlign: VerticalAlign.CENTER,
+                        columnSpan: 3,
                       }),
                       new TableCell({
                         children: [
@@ -181,10 +205,21 @@ const createDocument = (formData: FormDataStructure) => {
                 }),
               ]),
             ].concat([
-                  new TableRow({
+              new TableRow({
                 children: [
                   new TableCell({
-                    children: [new Paragraph(formData.observation)],
+                    children: [
+                      new Paragraph({
+                        children: [
+                          new TextRun({
+                            text: "OBSERVACIONES",
+                            bold: true,
+                            color: "FFFFFF",
+                          }),
+                        ],
+                        alignment: "center",
+                      }),
+                    ],
                     verticalAlign: VerticalAlign.CENTER,
                     shading: {
                       type: "clear",
@@ -192,6 +227,7 @@ const createDocument = (formData: FormDataStructure) => {
                       fill: "000000", // black
                       //  background
                     },
+                    columnSpan: 5,
                   }),
                 ],
               }),
@@ -200,25 +236,69 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [new Paragraph(formData.observation)],
                     verticalAlign: VerticalAlign.CENTER,
+                    columnSpan: 5,
                   }),
                 ],
               }),
               new TableRow({
                 children: [
                   new TableCell({
-                    children: [new Paragraph("Jefe de obra")],
+                    children: [
+                      new Paragraph({
+                        children: [
+                          new TextRun({
+                            text: "NOMBRES Y FIRMAS",
+                            bold: true,
+                            color: "FFFFFF",
+                          }),
+                        ],
+                        alignment: "center",
+                      }),
+                    ],
+                    verticalAlign: VerticalAlign.CENTER,
+                    shading: {
+                      type: "clear",
+                      color: "auto",
+                      fill: "000000", // black
+                      //  background
+                    },
+                    textDirection: "lrTb",
+                    columnSpan: 5,
+                  }),
+                ],
+              }),
+              new TableRow({
+                children: [
+                  new TableCell({
+                    children: [new Paragraph(" ")],
+                    verticalAlign: VerticalAlign.CENTER,
+                  }),
+                  new TableCell({
+                    children: [new Paragraph("Nombres y Apellidos")],
+                    verticalAlign: VerticalAlign.CENTER,
+                  }),
+                  new TableCell({
+                    children: [new Paragraph("Firma")],
+                    verticalAlign: VerticalAlign.CENTER,
+                  }),
+                  new TableCell({
+                    children: [new Paragraph("Codia")],
+                    verticalAlign: VerticalAlign.CENTER,
+                  }),
+                  new TableCell({
+                    children: [new Paragraph("Fecha")],
+                    verticalAlign: VerticalAlign.CENTER,
+                  }),
+                ],
+              }),
+              new TableRow({
+                children: [
+                  new TableCell({
+                    children: [new Paragraph("Encargado de obra")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.bossName)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Firma Jefe de obra")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -238,26 +318,11 @@ const createDocument = (formData: FormDataStructure) => {
                           })
                         : new Paragraph("No hay firma"),
                     ],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Codia Jefe de obra")],
+
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.bossCodia)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Fecha Jefe de obra")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -271,19 +336,12 @@ const createDocument = (formData: FormDataStructure) => {
               new TableRow({
                 children: [
                   new TableCell({
-                    children: [new Paragraph("Inspector 1")],
+                    children: [new Paragraph("Inspectores")],
                     verticalAlign: VerticalAlign.CENTER,
+                    rowSpan: 3,
                   }),
                   new TableCell({
                     children: [new Paragraph(formData.inspector1Name)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Firma Inspector 1")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -307,24 +365,8 @@ const createDocument = (formData: FormDataStructure) => {
                     ],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Codia Inspector 1")],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
                   new TableCell({
                     children: [new Paragraph(formData.inspector1Codia)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Fecha Inspector 1")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -340,19 +382,7 @@ const createDocument = (formData: FormDataStructure) => {
               new TableRow({
                 children: [
                   new TableCell({
-                    children: [new Paragraph("Inspector 2")],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                  new TableCell({
                     children: [new Paragraph(formData.inspector2Name)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Firma Inspector 2")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -376,24 +406,8 @@ const createDocument = (formData: FormDataStructure) => {
                     ],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Codia Inspector 2")],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
                   new TableCell({
                     children: [new Paragraph(formData.inspector2Codia)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Fecha Inspector 2")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -409,19 +423,7 @@ const createDocument = (formData: FormDataStructure) => {
               new TableRow({
                 children: [
                   new TableCell({
-                    children: [new Paragraph("Inspector 3")],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                  new TableCell({
                     children: [new Paragraph(formData.inspector3Name)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Firma Inspector 3")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -445,24 +447,8 @@ const createDocument = (formData: FormDataStructure) => {
                     ],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Codia Inspector 3")],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
                   new TableCell({
                     children: [new Paragraph(formData.inspector3Codia)],
-                    verticalAlign: VerticalAlign.CENTER,
-                  }),
-                ],
-              }),
-              new TableRow({
-                children: [
-                  new TableCell({
-                    children: [new Paragraph("Fecha Inspector 3")],
                     verticalAlign: VerticalAlign.CENTER,
                   }),
                   new TableCell({
@@ -490,4 +476,9 @@ const createDocument = (formData: FormDataStructure) => {
       console.error("Error creating document:", error);
     });
 };
+
 export default createDocument;
+
+interface ReportData {
+
+const createReport = (reportData: )
