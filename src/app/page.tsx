@@ -1,7 +1,7 @@
 import { auth } from "~/server/auth";
 import { api } from "~/trpc/server";
-import ButtonMoveForm from "./_components/button/button-move-form";
-import ButtonMoveReport from "./_components/button/button-move-report";
+import ButtonMoveForm from "./components/button/button-move-form";
+import ButtonMoveReport from "./components/button/button-move-report";
 
 export default async function Home() {
   const session = await auth();

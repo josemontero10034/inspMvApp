@@ -1,4 +1,4 @@
-import type { informationForm } from "~/app/_components/option-form/types";
+import type { informationForm } from "~/app/components/option-form/types";
 
 const evaluationInformationOptions: informationForm[] = [
   {

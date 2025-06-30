@@ -12,7 +12,7 @@ import {
   TextRun,
 } from "docx";
 import fs from "fs";
-import type { FormDataStructure } from "~/app/_components/option-form/types";
+import type { FormDataStructure } from "~/app/components/option-form/types";
 
 function base64ToUint8Array(base64: string): Uint8Array {
   const binaryString = atob(base64.split(",")[1] ?? base64);
