@@ -4,6 +4,8 @@ import DiscordProvider from "next-auth/providers/discord";
 
 import { db } from "~/server/db";
 
+// add all 
+
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
  * object and keep type safety.
