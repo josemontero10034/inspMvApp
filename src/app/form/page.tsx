@@ -1,4 +1,4 @@
-import FormSupervisor from "../_components/form-supervisor";
+import FormSupervisor from "../components/form-supervisor";
 
 const FormSupervisorPage = ()=> {
     return <FormSupervisor />;
