@@ -69,7 +69,7 @@ export default function Header() {
             <Link href="/">Home</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/admin">Admin</Link>
+            <Link href="/inspection-Table">Inspecciones</Link>
           </li>
           <li className={styles.navItem}>
             <Link href="/reminder">Reminder</Link>
