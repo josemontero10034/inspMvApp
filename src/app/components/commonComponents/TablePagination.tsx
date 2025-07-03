@@ -33,8 +33,7 @@ interface TablePaginationActionsProps {
 interface customPaginationTable {
   column?: columnsType;
   dataSource: dataTableType[];
-  onOpenModal: (value: boolean) => void;
-  onSelect: (record: Inspection) => void;
+
 }
 
 function TablePaginationActions(props: TablePaginationActionsProps) {
@@ -179,9 +178,7 @@ export default function CustomPaginationActionsTable(
                 <Button
                   variant="outlined"
                   onClick={() => {
-                    props.onSelect(row);
-                    props.onOpenModal(true);
-                  }}
+row.onViewDetails(row);                  }}
                 >
                   Ver detalles
                 </Button>

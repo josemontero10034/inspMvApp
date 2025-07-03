@@ -11,6 +11,10 @@ import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import CustomPaginationActionsTable from "./commonComponents/TablePagination";
 import CustomizedDialogs from "./commonComponents/modals";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineContent from "@mui/lab/TimelineContent";
 
 type Status =
   | "submitted"
@@ -302,11 +306,11 @@ const columns = [
   },
   {
     title: "Acciones",
- dataIndex: "Acciones",    key: "acciones",
-
+    dataIndex: "Acciones",
+    key: "acciones",
   },
 ];
-   
+
 const InspectionsTableInfo: React.FC = () => {
   const [data, setData] = useState<Inspection[]>(initialData);
   const [search, setSearch] = useState("");
@@ -391,16 +395,16 @@ const InspectionsTableInfo: React.FC = () => {
     setNota(e.target.value);
   };
 
-  // const handleNotaSave = () => {
-  //     if (selectedInspection) {
-  //         setData((prev) =>
-  //             prev.map((item) =>
-  //                 item.key === selectedInspection.key ? { ...item, notas: nota } : item
-  //             )
-  //         );
-  //         setModalVisible(false);
-  //     }
-  // };
+  const handleNotaSave = () => {
+      if (selectedInspection) {
+          setData((prev) =>
+              prev.map((item) =>
+                  item.key === selectedInspection.key ? { ...item, notas: nota } : item
+              )
+          );
+          setModalVisible(false);
+      }
+  };
 
   return (
     <div>
@@ -445,16 +449,12 @@ const InspectionsTableInfo: React.FC = () => {
       <CustomPaginationActionsTable
         column={columns}
         dataSource={filteredData}
-        onSelect={(record: Inspection) => {
-          setSelectedInspection(record);
-            setNota(record.notas);
-        }} onOpenModal={setModalVisible}
 
       />
       <CustomizedDialogs
         open={modalVisible}
         title={selectedInspection?.nombreProyecto}
-        onHandler={() => setModalVisible(false)}
+        onHandler={handleNotaSave}
       >
         {selectedInspection && (
           <div>
@@ -491,7 +491,16 @@ const InspectionsTableInfo: React.FC = () => {
               <Timeline>
                 {selectedInspection.timeline.map((t, idx) => (
                   <TimelineItem key={idx}>
-                    {t.status.charAt(0).toUpperCase() + t.status.slice(1)} -{" "}
+                    <TimelineSeparator>
+                      <TimelineDot />
+                      <TimelineConnector />
+                    </TimelineSeparator>
+                    <TimelineContent>
+                      {" "}
+                      {t.status.charAt(0).toUpperCase() +
+                        t.status.slice(1)}{" "}
+                      -{" "}
+                    </TimelineContent>
                     {t.date}
                   </TimelineItem>
                 ))}
