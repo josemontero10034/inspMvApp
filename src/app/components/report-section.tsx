@@ -15,6 +15,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
 import TimelineContent from "@mui/lab/TimelineContent";
+import type { Inspection } from "./inpections-table-info";
 
 type Status =
   | "submitted"
@@ -49,21 +50,7 @@ export type columnsType = (
     }
 )[];
 
-export interface Inspection {
-  key: string;
-  nombreProyecto: string;
-  estatus: Status;
-  licencia: string;
-  fechaSolicitud: string;
-  direccion: string;
-  inspectorLider: string;
-  inspector: string;
-  conductor: string;
-  ficha: string;
-  acciones?: string;
-  timeline: { status: Status; date: string }[];
-  notas: string;
-}
+
 
 const STATUS_OPTIONS: Status[] = [
   "submitted",
@@ -75,7 +62,7 @@ const STATUS_OPTIONS: Status[] = [
 ];
 
 // Dummy data for demonstration
-export const initialData: Inspection[] = [
+const initialData: Inspection[] = [
   {
     key: "1",
     nombreProyecto: "Proyecto A",
@@ -257,7 +244,7 @@ export const initialData: Inspection[] = [
   },
 ];
 
-export const columns = [
+const columns = [
   {
     title: "Nombre del proyecto",
     dataIndex: "nombreProyecto",
@@ -316,7 +303,7 @@ const InspectionsTableInfo: React.FC = () => {
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState<Status>("All");
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedInspection, setSelectedInspection] =
+  const [selectedProject, setSelectedProject] =
     useState<Inspection | null>(null);
   const [nota, setNota] = useState("");
 
@@ -326,7 +313,7 @@ const InspectionsTableInfo: React.FC = () => {
       data.map((item) => ({
         ...item,
         onViewDetails: (record: Inspection) => {
-          setSelectedInspection(record);
+          setSelectedProject(record);
           setNota(record.notas);
           setModalVisible(true);
         },
@@ -396,10 +383,10 @@ const InspectionsTableInfo: React.FC = () => {
   };
 
   const handleNotaSave = () => {
-      if (selectedInspection) {
+      if (selectedProject) {
           setData((prev) =>
               prev.map((item) =>
-                  item.key === selectedInspection.key ? { ...item, notas: nota } : item
+                  item.key === selectedProject.key ? { ...item, notas: nota } : item
               )
           );
           setModalVisible(false);
@@ -422,23 +409,8 @@ const InspectionsTableInfo: React.FC = () => {
           onChange={(e) => setSearch(e.target.value)}
           style={{ width: 200 }}
         />
-        <FormControl style={{ minWidth: 100 }}>
-          <InputLabel id="demo-simple-select-label">Estatus</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={status}
-            label="Estatus"
-            onChange={(e) => setStatus(e.target.value as Status)}
-          >
-            {STATUS_OPTIONS.map((s) => (
-              <MenuItem key={s} value={s}>
-                {s.charAt(0).toUpperCase() + s.slice(1)}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <Button className="outline-amber-200" onClick={handleExport}>nu</Button>
+
+        <Button onClick={handleExport}>Exportar</Button>
       </div>
       {/* <Table
             columns={columns}
@@ -453,43 +425,43 @@ const InspectionsTableInfo: React.FC = () => {
       />
       <CustomizedDialogs
         open={modalVisible}
-        title={selectedInspection?.nombreProyecto}
+        title={selectedProject?.nombreProyecto}
         onHandler={handleNotaSave}
       >
-        {selectedInspection && (
+        {selectedProject && (
           <div>
             <p>
               <strong>Último estatus:</strong>{" "}
-              {selectedInspection.estatus.charAt(0).toUpperCase() +
-                selectedInspection.estatus.slice(1)}
+              {selectedProject.estatus.charAt(0).toUpperCase() +
+                selectedProject.estatus.slice(1)}
             </p>
             <p>
-              <strong>Licencia:</strong> {selectedInspection.licencia}
+              <strong>Licencia:</strong> {selectedProject.licencia}
             </p>
             <p>
               <strong>Fecha de solicitud:</strong>{" "}
-              {selectedInspection.fechaSolicitud}
+              {selectedProject.fechaSolicitud}
             </p>
             <p>
-              <strong>Dirección:</strong> {selectedInspection.direccion}
+              <strong>Dirección:</strong> {selectedProject.direccion}
             </p>
             <p>
               <strong>Inspector líder:</strong>{" "}
-              {selectedInspection.inspectorLider}
+              {selectedProject.inspectorLider}
             </p>
             <p>
-              <strong>Inspector:</strong> {selectedInspection.inspector}
+              <strong>Inspector:</strong> {selectedProject.inspector}
             </p>
             <p>
-              <strong>Conductor:</strong> {selectedInspection.conductor}
+              <strong>Conductor:</strong> {selectedProject.conductor}
             </p>
             <p>
-              <strong>Ficha:</strong> {selectedInspection.ficha}
+              <strong>Ficha:</strong> {selectedProject.ficha}
             </p>
             <div style={{ margin: "16px 0" }}>
               <strong>Timeline:</strong>
               <Timeline>
-                {selectedInspection.timeline.map((t, idx) => (
+                {selectedProject.timeline.map((t, idx) => (
                   <TimelineItem key={idx}>
                     <TimelineSeparator>
                       <TimelineDot />
