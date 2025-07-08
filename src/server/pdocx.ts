@@ -352,7 +352,7 @@ const createDocument = (formData: FormDataStructure) => {
                               new ImageRun({
                                 type: "png",
                                 data: base64ToUint8Array(
-                                  formData.inspector1Sign
+                                  formData.inspector1Sign,
                                 ),
                                 transformation: {
                                   width: 100,
@@ -372,7 +372,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [
                       new Paragraph(
-                        formData.inspector1Date.toLocaleDateString()
+                        formData.inspector1Date.toLocaleDateString(),
                       ),
                     ],
                     verticalAlign: VerticalAlign.CENTER,
@@ -393,7 +393,7 @@ const createDocument = (formData: FormDataStructure) => {
                               new ImageRun({
                                 type: "png",
                                 data: base64ToUint8Array(
-                                  formData.inspector2Sign
+                                  formData.inspector2Sign,
                                 ),
                                 transformation: {
                                   width: 100,
@@ -413,7 +413,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [
                       new Paragraph(
-                        formData.inspector2Date.toLocaleDateString()
+                        formData.inspector2Date.toLocaleDateString(),
                       ),
                     ],
                     verticalAlign: VerticalAlign.CENTER,
@@ -434,7 +434,7 @@ const createDocument = (formData: FormDataStructure) => {
                               new ImageRun({
                                 type: "png",
                                 data: base64ToUint8Array(
-                                  formData.inspector3Sign
+                                  formData.inspector3Sign,
                                 ),
                                 transformation: {
                                   width: 100,
@@ -454,7 +454,7 @@ const createDocument = (formData: FormDataStructure) => {
                   new TableCell({
                     children: [
                       new Paragraph(
-                        formData.inspector3Date.toLocaleDateString()
+                        formData.inspector3Date.toLocaleDateString(),
                       ),
                     ],
                     verticalAlign: VerticalAlign.CENTER,
@@ -478,7 +478,3 @@ const createDocument = (formData: FormDataStructure) => {
 };
 
 export default createDocument;
-
-interface ReportData {
-
-const createReport = (reportData: )
