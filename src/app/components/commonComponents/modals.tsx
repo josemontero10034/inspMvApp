@@ -23,10 +23,11 @@ interface customizedDialogProps {
   title?: string;
   open: boolean;
   onHandler: (open: boolean) => void;
+  fullwidthDialog?: boolean;
 }
 
 export default function CustomizedDialogs(props: customizedDialogProps) {
-  const { open, onHandler, title, children } = props;
+  const { open, onHandler, title, children, fullwidthDialog } = props;
 
   const handleClose = () => {
     onHandler(false);
@@ -38,6 +39,7 @@ export default function CustomizedDialogs(props: customizedDialogProps) {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
+        fullWidth={fullwidthDialog}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
           {title}

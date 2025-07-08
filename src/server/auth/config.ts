@@ -30,6 +30,9 @@ declare module "next-auth" {
  *
  * @see https://next-auth.js.org/configuration/options
  */
+
+console.log("Microsoft Client ID:", process.env.MICROSOFT_CLIENT_ID );
+console.log("Microsoft Client Secret:", process.env.MICROSOFT_CLIENT_SECRET);
 export const authConfig = {
   providers: [
         MicrosoftEntraID({
@@ -45,7 +48,7 @@ export const authConfig = {
      * GitHub provider requires you to add the `refresh_token_expires_in` field to the Account
      * model. Refer to the NextAuth.js docs for the provider you want to use. Example:
      *
-     * @see https://next-auth.js.org/providers/github
+     * @see https://next-auth.js.org/providers/githubprocess.env.MICROSOFT_CLIENT_ID
      */
   ],
   adapter: PrismaAdapter(db),

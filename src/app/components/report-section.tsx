@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useMemo } from "react";
 import {
   Input,
@@ -49,8 +50,6 @@ export type columnsType = (
       dataIndex?: undefined;
     }
 )[];
-
-
 
 const STATUS_OPTIONS: Status[] = [
   "submitted",
@@ -266,36 +265,6 @@ const columns = [
     dataIndex: "fechaSolicitud",
     key: "fechaSolicitud",
   },
-  {
-    title: "Direccion",
-    dataIndex: "direccion",
-    key: "direccion",
-  },
-  {
-    title: "Inspector lider",
-    dataIndex: "inspectorLider",
-    key: "inspectorLider",
-  },
-  {
-    title: "Inspector",
-    dataIndex: "inspector",
-    key: "inspector",
-  },
-  {
-    title: "Conductor",
-    dataIndex: "conductor",
-    key: "conductor",
-  },
-  {
-    title: "Ficha",
-    dataIndex: "ficha",
-    key: "ficha",
-  },
-  {
-    title: "Acciones",
-    dataIndex: "Acciones",
-    key: "acciones",
-  },
 ];
 
 const InspectionsTableInfo: React.FC = () => {
@@ -303,8 +272,9 @@ const InspectionsTableInfo: React.FC = () => {
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState<Status>("All");
   const [modalVisible, setModalVisible] = useState(false);
-  const [selectedProject, setSelectedProject] =
-    useState<Inspection | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Inspection | null>(
+    null,
+  );
   const [nota, setNota] = useState("");
 
   // Attach onViewDetails to each row
@@ -341,41 +311,6 @@ const InspectionsTableInfo: React.FC = () => {
     });
   }, [tableData, search, status]);
 
-  // Export handler (CSV)
-  const handleExport = () => {
-    const headers = [
-      "Nombre del proyecto",
-      "Estatus",
-      "Licencia",
-      "Fecha de solicitud",
-      "Direccion",
-      "Inspector lider",
-      "Inspector",
-      "Conductor",
-      "Ficha",
-    ];
-    const rows = filteredData.map((item) =>
-      [
-        item.nombreProyecto,
-        item.estatus,
-        item.licencia,
-        item.fechaSolicitud,
-        item.direccion,
-        item.inspectorLider,
-        item.inspector,
-        item.conductor,
-        item.ficha,
-      ].join(","),
-    );
-    const csvContent = [headers.join(","), ...rows].join("\n");
-    const blob = new Blob([csvContent], { type: "text/csv" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "inspecciones.csv";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
 
   // Modal save notas
   const handleNotaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -383,14 +318,14 @@ const InspectionsTableInfo: React.FC = () => {
   };
 
   const handleNotaSave = () => {
-      if (selectedProject) {
-          setData((prev) =>
-              prev.map((item) =>
-                  item.key === selectedProject.key ? { ...item, notas: nota } : item
-              )
-          );
-          setModalVisible(false);
-      }
+    if (selectedProject) {
+      setData((prev) =>
+        prev.map((item) =>
+          item.key === selectedProject.key ? { ...item, notas: nota } : item,
+        ),
+      );
+      setModalVisible(false);
+    }
   };
 
   return (
@@ -409,85 +344,19 @@ const InspectionsTableInfo: React.FC = () => {
           onChange={(e) => setSearch(e.target.value)}
           style={{ width: 200 }}
         />
-
-        <Button onClick={handleExport}>Exportar</Button>
       </div>
-      {/* <Table
-            columns={columns}
-            dataSource={filteredData}
-            pagination={{ pageSize: 10 }}
-            rowKey="key"
-        /> */}
+
       <CustomPaginationActionsTable
         column={columns}
         dataSource={filteredData}
-
       />
       <CustomizedDialogs
         open={modalVisible}
         title={selectedProject?.nombreProyecto}
         onHandler={handleNotaSave}
       >
-        {selectedProject && (
-          <div>
-            <p>
-              <strong>Último estatus:</strong>{" "}
-              {selectedProject.estatus.charAt(0).toUpperCase() +
-                selectedProject.estatus.slice(1)}
-            </p>
-            <p>
-              <strong>Licencia:</strong> {selectedProject.licencia}
-            </p>
-            <p>
-              <strong>Fecha de solicitud:</strong>{" "}
-              {selectedProject.fechaSolicitud}
-            </p>
-            <p>
-              <strong>Dirección:</strong> {selectedProject.direccion}
-            </p>
-            <p>
-              <strong>Inspector líder:</strong>{" "}
-              {selectedProject.inspectorLider}
-            </p>
-            <p>
-              <strong>Inspector:</strong> {selectedProject.inspector}
-            </p>
-            <p>
-              <strong>Conductor:</strong> {selectedProject.conductor}
-            </p>
-            <p>
-              <strong>Ficha:</strong> {selectedProject.ficha}
-            </p>
-            <div style={{ margin: "16px 0" }}>
-              <strong>Timeline:</strong>
-              <Timeline>
-                {selectedProject.timeline.map((t, idx) => (
-                  <TimelineItem key={idx}>
-                    <TimelineSeparator>
-                      <TimelineDot />
-                      <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      {" "}
-                      {t.status.charAt(0).toUpperCase() +
-                        t.status.slice(1)}{" "}
-                      -{" "}
-                    </TimelineContent>
-                    {t.date}
-                  </TimelineItem>
-                ))}
-              </Timeline>
-            </div>
-            <div>
-              <strong>Notas de inspección:</strong>
-              <Input
-                value={nota}
-                onChange={handleNotaChange}
-                placeholder="Agregar nota"
-                style={{ marginTop: 8 }}
-              />
-            </div>
-          </div>
+        {selectedProject && (<div>aqui va la pagina para realizar el informe de la isnpeccion a travez de las paginas</div>
+         
         )}
       </CustomizedDialogs>
     </div>

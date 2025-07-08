@@ -438,7 +438,7 @@ const InspectionsTableInfo: React.FC = () => {
             ))}
           </Select>
         </FormControl>
-        <Button className="outline-amber-200" onClick={handleExport}>nu</Button>
+        <Button className="outline-amber-200" onClick={handleExport}>Exportar</Button>
       </div>
       {/* <Table
             columns={columns}
