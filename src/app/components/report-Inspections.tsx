@@ -1,5 +1,5 @@
 "use client";
-import { IconButton, Input } from "@mui/material";
+import { IconButton } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
 import CommonModal from "./common-modal";
 import ButtonOnSave from "./button/button-save";
@@ -10,7 +10,7 @@ type BasicPhotoData = { file: File; description: string; id?: string };
 // This component is used to report inspections and handle photo uploads
 // It allows users to take photos using their device's camera and add descriptions to the photos
 
-const ReportInspections: React.FC = () => {
+const InspectionDetails: React.FC = () => {
   const [photos, setPhotos] = useState<BasicPhotoData[]>([]);
   const [open, setOpen] = useState(false);
   const [description, setDescription] = useState<string>("");
@@ -78,7 +78,7 @@ const ReportInspections: React.FC = () => {
   };
 
   return (
-    <>
+    <div className=" ">
       <div className="mt-2 flex flex-col items-center justify-center bg-gray-100">
         <h1 className="mb-4 flex text-2xl font-bold">Reporte de inspeccion</h1>
         <p className="flex flex-col justify-items-center text-center text-lg">
@@ -149,8 +149,8 @@ const ReportInspections: React.FC = () => {
         }
         actions={<ButtonOnSave label={"Guardar"} handleClick={handleOnSave} />}
       />
-    </>
+    </div>
   );
 };
 
-export default ReportInspections;
+export default InspectionDetails;
