@@ -396,18 +396,18 @@ const InspectionsTableInfo: React.FC = () => {
   };
 
   const handleNotaSave = () => {
-      if (selectedInspection) {
-          setData((prev) =>
-              prev.map((item) =>
-                  item.key === selectedInspection.key ? { ...item, notas: nota } : item
-              )
-          );
-          setModalVisible(false);
-      }
+    if (selectedInspection) {
+      setData((prev) =>
+        prev.map((item) =>
+          item.key === selectedInspection.key ? { ...item, notas: nota } : item,
+        ),
+      );
+      setModalVisible(false);
+    }
   };
 
   return (
-    <div>
+    <div className="w-screen p-4">
       <div
         style={{
           display: "flex",
@@ -438,23 +438,18 @@ const InspectionsTableInfo: React.FC = () => {
             ))}
           </Select>
         </FormControl>
-        <Button className="outline-amber-200" onClick={handleExport}>Exportar</Button>
+        <Button className="outline-amber-200" onClick={handleExport}>
+          Exportar
+        </Button>
       </div>
-      {/* <Table
-            columns={columns}
-            dataSource={filteredData}
-            pagination={{ pageSize: 10 }}
-            rowKey="key"
-        /> */}
       <CustomPaginationActionsTable
         column={columns}
         dataSource={filteredData}
-
       />
       <CustomizedDialogs
         open={modalVisible}
         title={selectedInspection?.nombreProyecto}
-        onHandler={handleNotaSave}
+        onClose={handleNotaSave}
       >
         {selectedInspection && (
           <div>
