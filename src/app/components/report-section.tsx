@@ -317,14 +317,14 @@ const InspectionsTableInfo: React.FC = () => {
     setNota(e.target.value);
   };
 
-  const handleNotaSave = () => {
+  const handleNotaSave = (value:boolean) => {
     if (selectedProject) {
       setData((prev) =>
         prev.map((item) =>
           item.key === selectedProject.key ? { ...item, notas: nota } : item,
         ),
       );
-      setModalVisible(false);
+      setModalVisible(value);
     }
   };
 
@@ -353,7 +353,7 @@ const InspectionsTableInfo: React.FC = () => {
       <CustomizedDialogs
         open={modalVisible}
         title={selectedProject?.nombreProyecto}
-        onHandler={handleNotaSave}
+        onClose={handleNotaSave}
       >
         {selectedProject && (<div>aqui va la pagina para realizar el informe de la isnpeccion a travez de las paginas</div>
          
