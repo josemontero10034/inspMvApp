@@ -1,21 +1,9 @@
-"use client"
+"use client";
 import React, { useState, useMemo } from "react";
-import {
-  Input,
-  Select,
-  Button,
-  InputLabel,
-  MenuItem,
-  FormControl,
-} from "@mui/material";
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
+import { Input } from "@mui/material";
 import CustomPaginationActionsTable from "./commonComponents/TablePagination";
 import CustomizedDialogs from "./commonComponents/modals";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineContent from "@mui/lab/TimelineContent";
+
 import type { Inspection } from "./inpections-table-info";
 
 type Status =
@@ -50,15 +38,6 @@ export type columnsType = (
       dataIndex?: undefined;
     }
 )[];
-
-const STATUS_OPTIONS: Status[] = [
-  "submitted",
-  "assigned",
-  "inspected",
-  "reported",
-  "closed",
-  "All", // Added "All" option for filtering
-];
 
 // Dummy data for demonstration
 const initialData: Inspection[] = [
@@ -311,13 +290,12 @@ const InspectionsTableInfo: React.FC = () => {
     });
   }, [tableData, search, status]);
 
-
   // Modal save notas
   const handleNotaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNota(e.target.value);
   };
 
-  const handleNotaSave = (value:boolean) => {
+  const handleNotaSave = (value: boolean) => {
     if (selectedProject) {
       setData((prev) =>
         prev.map((item) =>
@@ -355,8 +333,11 @@ const InspectionsTableInfo: React.FC = () => {
         title={selectedProject?.nombreProyecto}
         onClose={handleNotaSave}
       >
-        {selectedProject && (<div>aqui va la pagina para realizar el informe de la isnpeccion a travez de las paginas</div>
-         
+        {selectedProject && (
+          <div>
+            aqui va la pagina para realizar el informe de la isnpeccion a travez
+            de las paginas
+          </div>
         )}
       </CustomizedDialogs>
     </div>

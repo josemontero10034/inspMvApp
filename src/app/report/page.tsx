@@ -1,10 +1,9 @@
-import React from 'react';
-import ReportInspections from '../components/report-Inspections';
+"use client";
+import React from "react";
+import ReportList from "../components/report-list";
 
 const ReportPage: React.FC = () => {
-    return (
-     <ReportInspections />
-    );
+  return <ReportList />;
 };
 
 export default ReportPage;

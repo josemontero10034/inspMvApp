@@ -20,9 +20,7 @@ export default function Header() {
         >
           {!session && (
             <>
-              <span className={styles.notSignedInText}>
-                You are not signed in
-              </span>
+              <span className={styles.notSignedInText}>No estas logueado </span>
               <a
                 href={`/api/auth/signin`}
                 className={styles.buttonPrimary}
@@ -44,7 +42,7 @@ export default function Header() {
                 ></span>
               )}
               <span className={styles.signedInText}>
-                <small>Signed in as</small>
+                <small>Iniciaste session como</small>
                 <br />
                 <strong>{session.user.email ?? session.user.name}</strong>
               </span>
@@ -57,7 +55,7 @@ export default function Header() {
                 }}
               >
                 {" "}
-                Sign Out
+                Salir{" "}
               </a>
             </>
           )}
@@ -72,7 +70,7 @@ export default function Header() {
             <Link href="/inspection-Table">Inspecciones</Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="/reminder">Reminder</Link>
+            <Link href="/report">reportes</Link>
           </li>
         </ul>
       </nav>

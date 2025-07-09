@@ -31,13 +31,12 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 
-console.log("Microsoft Client ID:", process.env.MICROSOFT_CLIENT_ID );
-console.log("Microsoft Client Secret:", process.env.MICROSOFT_CLIENT_SECRET);
+
 export const authConfig = {
   providers: [
         MicrosoftEntraID({
-      clientId: process.env.MICROSOFT_CLIENT_ID ,
-      clientSecret: process.env.MICROSOFT_CLIENT_SECRET,
+      clientId: process.env.AZURE_AD_CLIENT_ID ,
+      clientSecret: process.env.AZURE_AD_CLIENT_SECRET,
      
     })
   //  DiscordProvider,

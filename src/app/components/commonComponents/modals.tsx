@@ -7,7 +7,6 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import Typography from "@mui/material/Typography";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -22,15 +21,15 @@ interface customizedDialogProps {
   children?: React.ReactNode;
   title?: string;
   open: boolean;
-  onHandler: (open: boolean) => void;
-  fullwidthDialog?: boolean;
+  onClose: (open: boolean) => void;
+  fullScreenDialog?: boolean;
 }
 
 export default function CustomizedDialogs(props: customizedDialogProps) {
-  const { open, onHandler, title, children, fullwidthDialog } = props;
+  const { open, onClose, title, children, fullScreenDialog } = props;
 
   const handleClose = () => {
-    onHandler(false);
+    onClose(false);
   };
 
   return (
@@ -39,7 +38,7 @@ export default function CustomizedDialogs(props: customizedDialogProps) {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        fullWidth={fullwidthDialog}
+        fullScreen={fullScreenDialog}
       >
         <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
           {title}
