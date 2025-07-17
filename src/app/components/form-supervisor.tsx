@@ -4,7 +4,7 @@ import GeneralData from "./option-form/general-data";
 import StrucutureEvaluation from "./option-form/structure-evaluation";
 import ObservationInput from "./option-form/observationInput";
 import NameAndSigns from "./option-form/name-and-signs";
-import ButtonPrintForm from "./button/button-print-form";
+import ButtonPrintForm from "./commonComponents/button/button-print-form";
 import evaluationInformationOptions from "~/MOCK_DATA/evaluation-data";
 import type { FormDataStructure } from "./option-form/types";
 import createDocument from "~/server/pdocx";

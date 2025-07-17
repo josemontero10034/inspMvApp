@@ -417,7 +417,6 @@ const InspectionsTableInfo: React.FC = () => {
           alignItems: "center",
         }}
       >
-        <ControlPanel/>
         <Input
           placeholder="Buscar..."
           value={search}
