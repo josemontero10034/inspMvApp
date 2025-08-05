@@ -1,12 +1,9 @@
-import React, { useRef, type ReactNode } from 'react';
-import SignatureCanvas from 'react-signature-canvas';
-
-
+import React, { useRef } from "react";
+import SignatureCanvas from "react-signature-canvas";
 
 interface CustomSignatureProps {
-  
- close: () => void
-}   
+  close: () => void;
+}
 const CustomSignature: React.FC<CustomSignatureProps> = ({ close }) => {
   const [signature, setSignature] = React.useState<string>("");
   const sigCanvas = useRef<SignatureCanvas>(null);
