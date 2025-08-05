@@ -2,7 +2,7 @@
 import { IconButton } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
 import CommonModal from "./common-modal";
-import ButtonOnSave from "./button/button-save";
+import ButtonOnSave from "./commonComponents/button/button-save";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 type BasicPhotoData = { file: File; description: string; id?: string };

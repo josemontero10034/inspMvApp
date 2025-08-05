@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import Dialog from "@mui/material/Dialog";
 
 import SignatureCanvas from "react-signature-canvas";
@@ -24,7 +24,6 @@ const ModalSignature: React.FC<ModalSignatureProps> = ({
   setSignature,
 }) => {
   const sigCanvas = useRef<SignatureCanvas>(null);
- 
 
   const handlerOnSave = () => {
     if (signature) {
@@ -46,7 +45,6 @@ const ModalSignature: React.FC<ModalSignatureProps> = ({
       sx={{ "& .MuiDialog-container": { alignItems: "flex-end" } }}
       open={isOpen}
       onClose={onClose}
-
     >
       <DialogTitle id="alert-dialog-title">Firma del inspector</DialogTitle>
       <DialogContent className="h-[10%]">

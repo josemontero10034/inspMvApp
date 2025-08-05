@@ -14,11 +14,7 @@ import FirstPageIcon from "@mui/icons-material/FirstPage";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
-import type {
-  columnsType,
-  dataTableType,
-  Inspection,
-} from "../inpections-table-info";
+import type { columnsType, dataTableType } from "../inpections-table-info";
 import { Button, TableHead } from "@mui/material";
 
 interface TablePaginationActionsProps {
@@ -33,7 +29,6 @@ interface TablePaginationActionsProps {
 interface customPaginationTable {
   column?: columnsType;
   dataSource: dataTableType[];
-
 }
 
 function TablePaginationActions(props: TablePaginationActionsProps) {
@@ -178,7 +173,8 @@ export default function CustomPaginationActionsTable(
                 <Button
                   variant="outlined"
                   onClick={() => {
-row.onViewDetails(row);                  }}
+                    row.onViewDetails(row);
+                  }}
                 >
                   Ver detalles
                 </Button>

@@ -2,7 +2,6 @@
 import {
   Table,
   Document,
-  HeadingLevel,
   TableCell,
   TableRow,
   Paragraph,
