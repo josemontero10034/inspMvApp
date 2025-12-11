@@ -66,12 +66,12 @@ Si los parámetros SL1 igual o menor a 0.3 entonces se requerirá una evaluació
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Vista aérea del área de estudio.",
         note: "Fuente: Google Maps, 2023.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Ejemplo de edificación con irregularidades verticales.",
         note: "Fotografía tomada por el equipo de investigación.",
       },
@@ -85,12 +85,12 @@ Las edificaciones del ensanche Quisqueya están diversificadas donde se puede vi
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Mapa de zonificación sísmica de la República Dominicana.",
         note: "Adaptado del Ministerio de Obras Públicas y Comunicaciones (MOPC), 2011.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Comparativa de diseño estructural pre y post-código sísmico.",
         note: "Elaboración propia.",
       },
@@ -104,12 +104,12 @@ Garden y la septentrional, que históricamente han generado sismo de gran magnit
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Mapa geológico de la zona de estudio.",
         note: "Fuente: Servicio Geológico Nacional.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Falla de Enriquillo-Plantain Garden.",
         note: "Fuente: Mann, P., et al. (2002).",
       },
@@ -125,12 +125,12 @@ Por lo cual, surge la necesidad de Evaluar rigurosamente la vulnerabilidad sísm
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Registro histórico de sismicidad.",
         note: "Fuente: Instituto Sismológico Universitario.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Edificación construida antes de la normativa vigente.",
         note: "Fotografía tomada por el equipo de investigación.",
       },
@@ -143,12 +143,12 @@ Diferentes catástrofes ocurridas por eventos sísmicos alrededor del mundo evid
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Daños estructurales en Haití (2010).",
         note: "Fuente: Associated Press.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Modelo de reforzamiento estructural.",
         note: "Elaboración propia.",
       },
@@ -164,12 +164,12 @@ ONESVIE ha desarrollado proyectos similares en sectores habitacionales y educati
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Portada del manual FEMA P-154.",
         note: "Fuente: Federal Emergency Management Agency.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Proyectos de evaluación de ONESVIE.",
         note: "Fuente: Oficina Nacional de Evaluación Sísmica y Vulnerabilidad.",
       },
@@ -185,12 +185,12 @@ Específicos:
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Diagrama de flujo de la metodología.",
         note: "Elaboración propia.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Ejemplo de formulario de evaluación.",
         note: "Adaptado de FEMA P-154.",
       },
@@ -201,12 +201,12 @@ Específicos:
     content: `Esta sección describe en detalle cómo se realizó la investigación. Se especifica el diseño del estudio, la población y muestra, los instrumentos de recolección de datos, y los procedimientos y técnicas de análisis utilizados. La descripción debe ser lo suficientemente clara para que otros investigadores puedan replicar el estudio.`,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Software Survey123 en uso.",
         note: "Captura de pantalla del equipo de campo.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Análisis de datos en software estadístico.",
         note: "Elaboración propia.",
       },
@@ -228,12 +228,12 @@ El puntaje obtenido evidencia una alta vulnerabilidad. La combinación de constr
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Gráfico de puntajes de vulnerabilidad.",
         note: "Resultados del análisis de 50 edificaciones.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Identificación de columna corta en estructura.",
         note: "Fotografía tomada por el equipo de investigación.",
       },
@@ -251,12 +251,12 @@ Implementar medidas de mitigación para parapetos y elementos no estructurales.
 `,
     figures: [
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Propuesta de reforzamiento con muros de cortante.",
         note: "Elaboración propia.",
       },
       {
-        url: "/edificio.jpeg",
+        url: "/field/edificio.jpeg",
         title: "Certificado de capacitación en construcción sismo-resistente.",
         note: "Modelo propuesto.",
       },
@@ -548,8 +548,8 @@ export default function InvestigationArticlePage() {
     <ThemeProvider theme={theme}>
       <Container
         maxWidth="xl"
-        sx={{ my: 4, position: "relative", zIndex: 1 }}
-        className="bg-[url(/edificio.jpeg)] bg-cover bg-fixed bg-center bg-no-repeat"
+        sx={{ my: 0, position: "relative", zIndex: 1 }}
+        className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center bg-no-repeat"
       >
         <Paper
           elevation={6}
