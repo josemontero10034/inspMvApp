@@ -462,7 +462,7 @@ const modalStyle: SxProps<Theme> = {
 };
 
 const ApaFigure = ({ figure, number }: { figure: Figure; number: number }) => (
-  <Box sx={{ my: 2, textAlign: "left" }}>
+  <Box sx={{ my: 1, width: "100%", justifyItems: "center" }}>
     <Typography variant="caption" component="p" sx={{ fontWeight: "bold" }}>
       Figura {number}
     </Typography>
@@ -478,7 +478,9 @@ const ApaFigure = ({ figure, number }: { figure: Figure; number: number }) => (
       src={figure.url}
       alt={figure.title}
       sx={{
-        width: "100%",
+        display: "block",
+        width: "50%",
+        minWidth: "200px",
         height: "auto",
         borderRadius: "4px",
         border: "1px solid rgba(255,255,255,0.2)",
@@ -499,17 +501,21 @@ const ApaFigure = ({ figure, number }: { figure: Figure; number: number }) => (
 
 export default function InvestigationArticlePage() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const stepperRef = React.useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    stepperRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    stepperRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleReset = () => {
     setActiveStep(0);
+    stepperRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const [comments, setComments] = React.useState(initialComments);
@@ -549,7 +555,7 @@ export default function InvestigationArticlePage() {
       <Container
         maxWidth="xl"
         sx={{ my: 0, position: "relative", zIndex: 1 }}
-        className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center bg-no-repeat"
+        className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center"
       >
         <Paper
           elevation={6}
@@ -633,7 +639,7 @@ export default function InvestigationArticlePage() {
             sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
           />
 
-          <Box>
+          <Box ref={stepperRef}>
             <Stepper activeStep={activeStep} orientation="vertical">
               {(() => {
                 let figureCounter = 0;
@@ -687,6 +693,8 @@ export default function InvestigationArticlePage() {
                                 fontSize: "1rem",
                                 lineHeight: 1.75,
                                 fontFamily: "serif",
+                                textAlign: "justify",
+                                textJustify: "inter-word",
                                 mb: 4,
                                 ...(step.label ===
                                   "Referencias Bibliográficas" && {
@@ -699,9 +707,12 @@ export default function InvestigationArticlePage() {
                             </Typography>
 
                             {stepFigures.length > 0 && (
-                              <Grid container spacing={4} sx={{ mt: 2 }}>
+                              <Grid container spacing={4} sx={{ mt: 2, flexWrap: 'revert' }}>
                                 {figuresToRender.map((fig) => (
-                                  <Grid size={6} key={fig.number}>
+                                  <Grid
+                                    size={12}
+                                    key={fig.number}
+                                  >
                                     <ApaFigure
                                       figure={fig}
                                       number={fig.number}
@@ -841,10 +852,10 @@ export default function InvestigationArticlePage() {
               {selectedAuthor && (
                 <>
                   <Grid container>
-                    {/* Left Column */}
                     <Grid
                       size={12}
-                      sx={{ bgcolor: "primary.main", p: 3, color: "white" }}
+                      
+                      sx={{ bgcolor: "primary.main", p: 3, color: "white", display: 'flex', flexDirection: 'column' }}
                     >
                       <Box
                         sx={{
@@ -927,8 +938,7 @@ export default function InvestigationArticlePage() {
                       </Box>
                     </Grid>
 
-                    {/* Right Column */}
-                    <Grid size={12} sx={{ p: 3 }}>
+                    <Grid size={12}  sx={{ p: 3 }}>
                       <Box sx={{ mb: 3 }}>
                         <Typography
                           variant="h5"
