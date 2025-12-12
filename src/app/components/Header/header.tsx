@@ -17,7 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
   { name: "Home", href: "/" },
-  { name: "Sobre Nosotros", href: "/inspection-Table" },
+  { name: "Sobre Nosotros", href: "/aboutUs" },
   { name: "Contacto", href: "/report" },
 ];
 

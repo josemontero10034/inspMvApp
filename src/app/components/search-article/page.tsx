@@ -520,6 +520,7 @@ export default function InvestigationArticlePage() {
           maxWidth="xl"
           sx={{ my: 0, position: "relative", zIndex: 1 }}
           className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center"
+          disableGutters
         >
           <Paper
             elevation={6}
