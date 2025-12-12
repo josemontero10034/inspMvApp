@@ -64,18 +64,7 @@ Los riesgos no estructurales son objetos de uso en las edificaciones. Los riesgo
 En la EVR se registran el grado de severidad de las irregularidades verticales y horizontales. Estas irregularidades se penalizan según su estructura, suelo y año de la construcción.
 Si los parámetros SL1 igual o menor a 0.3 entonces se requerirá una evaluación n nivel 2.  Esta evaluación se hará en coordinación con un profesional especializado.
 `,
-    figures: [
-      {
-        url: "/field/edificio.jpeg",
-        title: "Vista aérea del área de estudio.",
-        note: "Fuente: Google Maps, 2023.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Ejemplo de edificación con irregularidades verticales.",
-        note: "Fotografía tomada por el equipo de investigación.",
-      },
-    ],
+    figures: [],
   },
   {
     label: "Introducción",
@@ -85,33 +74,37 @@ Las edificaciones del ensanche Quisqueya están diversificadas donde se puede vi
 `,
     figures: [
       {
-        url: "/field/edificio.jpeg",
-        title: "Mapa de zonificación sísmica de la República Dominicana.",
-        note: "Adaptado del Ministerio de Obras Públicas y Comunicaciones (MOPC), 2011.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Comparativa de diseño estructural pre y post-código sísmico.",
-        note: "Elaboración propia.",
+        url: "/field/mapa-sismico.png",
+        title: "Mapa Actividad Sismica República Dominicana.",
+        note: "(Mapa de actividad sísmica Rep. Dom) tomado de https://www.dlubal.com/",
       },
     ],
   },
   {
     label: "Contexto Geográfico",
-    content: `El aumento poblacional del Ensanche Quisqueya no se entiende solo como un fenómeno demográfico, sino como resultado de su posición estratégica dentro del Distrito Nacional. Al estar en el corazón de Santo Domingo, su crecimiento refleja la tendencia de la ciudad hacia la concentración urbana y la densificación vertical, lo que genera tanto oportunidades (dinamismo económico, acceso a servicios) como retos (congestión vehicular, presión sobre infraestructura).
-    El ensanche Quisqueya, distrito nacional, Esta zona se caracteriza por suelo tipo D (suelo rígido), con presencia de licuación y deslizamientos potenciales. La región esta influenciada por fallas geológicas como la Enriquillo-Plantain 
+    content: `El mapa geológico de la República Dominicana es una herramienta cartográfica esencial que ilustra la compleja y diversa composición del subsuelo del país, destacando su evolución tectónica y su ubicación estratégica en el margen norte del Caribe.
+La estructura del mapa refleja la intensa actividad tectónica del país, incluyendo la presencia de numerosas fallas activas, como la Falla Septentrional y la Zona de Falla de Enriquillo-Plantain Garden, que atraviesan la isla. La naturaleza del mapa es crucial para la exploración de recursos naturales, la planificación territorial y la gestión de riesgos geológicos.
+
+El ensanche Quisqueya, distrito nacional, Esta zona se caracteriza por suelo tipo D (suelo rígido), con presencia de licuación y deslizamientos potenciales. La región esta influenciada por fallas geológicas como la Enriquillo-Plantain 
 Garden y la septentrional, que históricamente han generado sismo de gran magnitud.  
+El aumento poblacional del Ensanche Quisqueya no se entiende solo como un fenómeno demográfico, sino como resultado de su posición estratégica dentro del Distrito Nacional. Al estar en el corazón de Santo Domingo, su crecimiento refleja la tendencia de la ciudad hacia la concentración urbana y la densificación vertical, lo que genera tanto oportunidades (dinamismo económico, acceso a servicios) como retos (congestión vehicular, presión sobre infraestructura).
+
 `,
     figures: [
       {
-        url: "/field/edificio.jpeg",
+        url: "/field/mapa-geologico.png",
         title: "Mapa geológico de la zona de estudio.",
-        note: "Fuente: Servicio Geológico Nacional.",
+        note: "(Mapa geológico de Rep. Dom) fuente: https://www.sgn.gob.do/index.php/geologia-y-tematicos/info-geologia",
       },
       {
-        url: "/field/edificio.jpeg",
-        title: "Falla de Enriquillo-Plantain Garden.",
-        note: "Fuente: Mann, P., et al. (2002).",
+        url: "/field/densidad poblacional 1980.png",
+        title: "Densidad Poblacional 1980",
+        note: "La ilustración muestra una vista aérea del año 1980, donde se puede observar la densidad poblacional  (Google Earth)",
+      },
+      {
+        url: "/field/densidad poblacional 2025.png",
+        title: "Densidad Poblacional 2025",
+        note: "La ilustración muestra una vista aérea del año 2025, donde se puede observar la densidad poblacional  (Google Earth)",
       },
     ],
   },
@@ -123,36 +116,14 @@ En el caso particular del área de estudio, según las indicaciones del Reglamen
 Aunque se conocen las normativas, muchas de las edificaciones del gran Santo Domingo, específicamente en los sectores urbanos como lo es el Ensanche Quisqueya, la misma fueron construida antes de la promulgación del reglamento sísmico vigente. Lo que quiere decir, que muchas de estas edificaciones no cumplen con los criterios de diseños Sismo-resistente, lo que hace que se genere incertidumbre de su capacidad antes un evento sísmico severo. 
 Por lo cual, surge la necesidad de Evaluar rigurosamente la vulnerabilidad sísmica de las edificaciones del área, con el fin de determinar su nivel real de exposición al riesgo y definir medidas que permitan reducir pérdidas humanas. Lo que solo mediante estudios técnicos como este es posible establecer un diagnóstico que oriente acciones preventivas efectivas para la seguridad de la población. 
 `,
-    figures: [
-      {
-        url: "/field/edificio.jpeg",
-        title: "Registro histórico de sismicidad.",
-        note: "Fuente: Instituto Sismológico Universitario.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Edificación construida antes de la normativa vigente.",
-        note: "Fotografía tomada por el equipo de investigación.",
-      },
-    ],
+    figures: [],
   },
   {
     label: "Justificación",
     content: `La evaluación de vulnerabilidad sísmica es esencial para garantizar la seguridad de las edificaciones habitacionales. Este estudio busca aportar evidencia técnica que permita la toma de decisiones en materia de reforzamiento estructural y políticas de prevención.
 Diferentes catástrofes ocurridas por eventos sísmicos alrededor del mundo evidenciando la necesidad de reformar las construcciones a nivel nacional. La ubicación de la isla y sus diferentes fallas geológicas, constituyen una amenaza presente que crea la necesidad de reforzar las estructuras y crear nuevas que prevalezcan antes estos fenómenos.
 `,
-    figures: [
-      {
-        url: "/field/edificio.jpeg",
-        title: "Daños estructurales en Haití (2010).",
-        note: "Fuente: Associated Press.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Modelo de reforzamiento estructural.",
-        note: "Elaboración propia.",
-      },
-    ],
+    figures: [],
   },
   {
     label: "Antecedentes",
@@ -164,14 +135,9 @@ ONESVIE ha desarrollado proyectos similares en sectores habitacionales y educati
 `,
     figures: [
       {
-        url: "/field/edificio.jpeg",
-        title: "Portada del manual FEMA P-154.",
-        note: "Fuente: Federal Emergency Management Agency.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Proyectos de evaluación de ONESVIE.",
-        note: "Fuente: Oficina Nacional de Evaluación Sísmica y Vulnerabilidad.",
+        url: "/field/foto-onesvie.png",
+        title: "Reunion del Director de ONESVIE con equipo de campo.",
+        note: "Equipo de evaluación Sísmica y Vulnerabilidad de Infraestructura y Edificaciones (Onesvie), Fuente: https://onesvie.gob.do/",
       },
     ],
   },
@@ -183,32 +149,31 @@ Específicos:
 - Determinar el puntaje final de riesgo sísmico.
 - Proponer medidas de mitigación y reforzamiento.
 `,
-    figures: [
-      {
-        url: "/field/edificio.jpeg",
-        title: "Diagrama de flujo de la metodología.",
-        note: "Elaboración propia.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Ejemplo de formulario de evaluación.",
-        note: "Adaptado de FEMA P-154.",
-      },
-    ],
+    figures: [],
   },
   {
     label: "Materiales y Métodos",
     content: `Esta sección describe en detalle cómo se realizó la investigación. Se especifica el diseño del estudio, la población y muestra, los instrumentos de recolección de datos, y los procedimientos y técnicas de análisis utilizados. La descripción debe ser lo suficientemente clara para que otros investigadores puedan replicar el estudio.`,
     figures: [
       {
-        url: "/field/edificio.jpeg",
-        title: "Software Survey123 en uso.",
-        note: "Captura de pantalla del equipo de campo.",
+        url: "/field/form-level-1.png",
+        title: "Formularios para evaluación visual rápida EVR nivel 1",
+        note: "Formulario evaluación de edificación antes eventos sísmico  (manual Fema P154) nivel 1",
       },
       {
-        url: "/field/edificio.jpeg",
-        title: "Análisis de datos en software estadístico.",
-        note: "Elaboración propia.",
+        url: "/field/form-level-2.png",
+        title: "Formularios para evaluacion visual rápida EVR nivel 2",
+        note: "Formulario evaluación de edificación antes eventos sísmico  (manual Fema P154) nivel 2",
+      },
+      {
+        url: "/field/survey123.png",
+        title: "Survey123 App",
+        note: "La Aplicación Survey123, Permite a los usuarios crear, compartir y analizar encuestas desde dispositivos web o móviles, incluso sin conexión a internet.) (https://www.esri.es)",
+      },
+      {
+        url: "/field/drone.png",
+        title: "Drone",
+        note: "Equipo para recopilación de imágenes aéreas de alta resolución. (DJI Mavic 2 Pro)",
       },
     ],
   },
@@ -228,14 +193,24 @@ El puntaje obtenido evidencia una alta vulnerabilidad. La combinación de constr
 `,
     figures: [
       {
-        url: "/field/edificio.jpeg",
-        title: "Gráfico de puntajes de vulnerabilidad.",
-        note: "Resultados del análisis de 50 edificaciones.",
+        url: "/field/estadistica-segun-uso.png",
+        title: "Clasificacion y porcentajes de edificaciones según uso.",
+        note: "Resultados del análisis de 6 edificaciones. fuente: elaboración propia.",
       },
       {
-        url: "/field/edificio.jpeg",
-        title: "Identificación de columna corta en estructura.",
-        note: "Fotografía tomada por el equipo de investigación.",
+        url: "/field/estadistica-nivel-1-femap154.png",
+        title: "Estadística puntualización nivel 1 FEMA P-154.",
+        note: "Resultados del análisis de 6 edificaciones. fuente: elaboración propia.",
+      },
+      {
+        url: "/field/indice-fema-p154.png",
+        title: "Indice de vulnerabilidad sísmica según FEMA P-154.",
+        note: "Resultados del indice de vulnerabilidad sísmica según FEMA P-154. fuente: elaboración propia.",
+      },
+      {
+        url: "/field/puntuacion-de-edificaciones.png",
+        title: "Puntuacion Final de edificaciones evaluadas.",
+        note: " Resultados del análisis de 6 edificaciones. fuente: elaboración propia.",
       },
     ],
   },
@@ -249,18 +224,7 @@ Recomendaciones:
 Implementar medidas de mitigación para parapetos y elementos no estructurales.
  Promover capacitaciones en construcción sismo-resistente en el sector habitacional.
 `,
-    figures: [
-      {
-        url: "/field/edificio.jpeg",
-        title: "Propuesta de reforzamiento con muros de cortante.",
-        note: "Elaboración propia.",
-      },
-      {
-        url: "/field/edificio.jpeg",
-        title: "Certificado de capacitación en construcción sismo-resistente.",
-        note: "Modelo propuesto.",
-      },
-    ],
+    figures: [],
   },
   {
     label: "Referencias Bibliográficas",
@@ -462,7 +426,7 @@ const modalStyle: SxProps<Theme> = {
 };
 
 const ApaFigure = ({ figure, number }: { figure: Figure; number: number }) => (
-  <Box sx={{ my: 2, textAlign: "left" }}>
+  <Box sx={{ my: 1, width: "100%", justifyItems: "center" }}>
     <Typography variant="caption" component="p" sx={{ fontWeight: "bold" }}>
       Figura {number}
     </Typography>
@@ -478,7 +442,9 @@ const ApaFigure = ({ figure, number }: { figure: Figure; number: number }) => (
       src={figure.url}
       alt={figure.title}
       sx={{
-        width: "100%",
+        display: "block",
+        width: "50%",
+        minWidth: "200px",
         height: "auto",
         borderRadius: "4px",
         border: "1px solid rgba(255,255,255,0.2)",
@@ -499,17 +465,21 @@ const ApaFigure = ({ figure, number }: { figure: Figure; number: number }) => (
 
 export default function InvestigationArticlePage() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const stepperRef = React.useRef<HTMLDivElement>(null);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    stepperRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    stepperRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleReset = () => {
     setActiveStep(0);
+    stepperRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const [comments, setComments] = React.useState(initialComments);
@@ -549,7 +519,7 @@ export default function InvestigationArticlePage() {
       <Container
         maxWidth="xl"
         sx={{ my: 0, position: "relative", zIndex: 1 }}
-        className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center bg-no-repeat"
+        className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center"
       >
         <Paper
           elevation={6}
@@ -633,7 +603,7 @@ export default function InvestigationArticlePage() {
             sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
           />
 
-          <Box>
+          <Box ref={stepperRef}>
             <Stepper activeStep={activeStep} orientation="vertical">
               {(() => {
                 let figureCounter = 0;
@@ -687,6 +657,8 @@ export default function InvestigationArticlePage() {
                                 fontSize: "1rem",
                                 lineHeight: 1.75,
                                 fontFamily: "serif",
+                                textAlign: "justify",
+                                textJustify: "inter-word",
                                 mb: 4,
                                 ...(step.label ===
                                   "Referencias Bibliográficas" && {
@@ -701,7 +673,7 @@ export default function InvestigationArticlePage() {
                             {stepFigures.length > 0 && (
                               <Grid container spacing={4} sx={{ mt: 2 }}>
                                 {figuresToRender.map((fig) => (
-                                  <Grid size={6} key={fig.number}>
+                                  <Grid size={12} key={fig.number}>
                                     <ApaFigure
                                       figure={fig}
                                       number={fig.number}
@@ -841,10 +813,15 @@ export default function InvestigationArticlePage() {
               {selectedAuthor && (
                 <>
                   <Grid container>
-                    {/* Left Column */}
                     <Grid
                       size={12}
-                      sx={{ bgcolor: "primary.main", p: 3, color: "white" }}
+                      sx={{
+                        bgcolor: "primary.main",
+                        p: 3,
+                        color: "white",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}
                     >
                       <Box
                         sx={{
@@ -927,7 +904,6 @@ export default function InvestigationArticlePage() {
                       </Box>
                     </Grid>
 
-                    {/* Right Column */}
                     <Grid size={12} sx={{ p: 3 }}>
                       <Box sx={{ mb: 3 }}>
                         <Typography
