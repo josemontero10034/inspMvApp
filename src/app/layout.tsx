@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className=" h-fit text-black antialiased">
+      <body className=" h-fit w-fit text-black antialiased">
         <SessionProvider>
           <TRPCReactProvider>{children}</TRPCReactProvider>
           <Footer />
