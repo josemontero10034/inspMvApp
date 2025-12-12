@@ -1,5 +1,4 @@
 "use client";
-
 import * as React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
@@ -18,7 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
   { name: "Home", href: "/" },
-  { name: "Sobre Nosotros", href: "/inspection-Table" },
+  { name: "Sobre Nosotros", href: "/aboutUs" },
   { name: "Contacto", href: "/report" },
 ];
 

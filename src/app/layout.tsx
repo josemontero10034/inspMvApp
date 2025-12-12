@@ -26,7 +26,6 @@ export default function RootLayout({
     <html lang="en" className={`${geist.variable}`}>
       <body className="m-auto w-fit h-fit text-black antialiased">
         <SessionProvider>
-          <Header />
           <TRPCReactProvider>{children}</TRPCReactProvider>
           <Footer />
         </SessionProvider>
