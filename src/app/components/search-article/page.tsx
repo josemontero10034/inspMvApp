@@ -290,7 +290,7 @@ const authors: Author[] = [
   },
   {
     name: "Ing. Jose Radhames Montero",
-    bio: "Ingeniero Inspector de Obras con amplia experiencia en supervisión de proyectos de construcción y evaluación estructural. Ha trabajado en múltiples proyectos de infraestructura urbana.",
+    bio: "Maestrante en Ingenieria en Geotecnia y Cimentaciones.Ingeniero Inspector de Obras con amplia experiencia en supervisión de proyectos.",
     avatar: "/jose-montero.jpg", // Placeholder path
     cv: {
       specialty: "Experto en Supervisión y Evaluación Estructural",
@@ -499,14 +499,6 @@ export default function InvestigationArticlePage() {
   };
 
   const [openModal, setOpenModal] = React.useState(false);
-  const [selectedAuthor, setSelectedAuthor] = React.useState<Author | null>(
-    null,
-  );
-
-  const handleOpenModal = (author: Author) => {
-    setSelectedAuthor(author);
-    setOpenModal(true);
-  };
 
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -588,13 +580,6 @@ export default function InvestigationArticlePage() {
                         {author.bio}
                       </Typography>
                     </Box>
-                    <Button
-                      variant="text"
-                      onClick={() => handleOpenModal(author)}
-                      sx={{ ml: 2, color: "primary.main", alignSelf: "center" }}
-                    >
-                      Leer más
-                    </Button>
                   </Box>
                 </Box>
               ))}
@@ -799,213 +784,6 @@ export default function InvestigationArticlePage() {
               </Box>
             </Box>
           </Paper>
-
-          <Modal
-            aria-labelledby="author-cv-modal-title"
-            aria-describedby="author-cv-modal-description"
-            open={openModal}
-            onClose={handleCloseModal}
-            closeAfterTransition
-            slots={{ backdrop: Backdrop }}
-            slotProps={{
-              backdrop: {
-                timeout: 500,
-              },
-            }}
-          >
-            <Fade in={openModal}>
-              <Box sx={modalStyle}>
-                {selectedAuthor && (
-                  <>
-                    <Grid container>
-                      <Grid
-                        size={12}
-                        sx={{
-                          bgcolor: "primary.main",
-                          p: 3,
-                          color: "white",
-                          display: "flex",
-                          flexDirection: "column",
-                        }}
-                      >
-                        <Box
-                          sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            textAlign: "center",
-                          }}
-                        >
-                          <Avatar
-                            alt={selectedAuthor.name}
-                            src={selectedAuthor.avatar}
-                            sx={{
-                              width: 150,
-                              height: 150,
-                              mb: 2,
-                              border: "4px solid white",
-                            }}
-                          />
-                          <Typography
-                            variant="h4"
-                            component="h2"
-                            sx={{ fontWeight: "bold" }}
-                          >
-                            {selectedAuthor.name}
-                          </Typography>
-                          <Typography variant="h6" sx={{ mb: 3 }}>
-                            {selectedAuthor.cv.specialty}
-                          </Typography>
-
-                          <Divider
-                            sx={{
-                              bgcolor: "rgba(255,255,255,0.5)",
-                              width: "100%",
-                              my: 2,
-                            }}
-                          />
-
-                          <Typography
-                            variant="h6"
-                            sx={{ alignSelf: "flex-start", mb: 1 }}
-                          >
-                            Contacto
-                          </Typography>
-                          <Box
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              mb: 1,
-                              alignSelf: "flex-start",
-                            }}
-                          >
-                            <EmailIcon sx={{ mr: 1 }} />
-                            <Link
-                              href={`mailto:${selectedAuthor.cv.contact.email}`}
-                              color="inherit"
-                              underline="hover"
-                            >
-                              {selectedAuthor.cv.contact.email}
-                            </Link>
-                          </Box>
-                          <Box
-                            sx={{
-                              display: "flex",
-                              alignItems: "center",
-                              alignSelf: "flex-start",
-                            }}
-                          >
-                            <LinkedInIcon sx={{ mr: 1 }} />
-                            <Link
-                              href={`https://${selectedAuthor.cv.contact.linkedin}`}
-                              target="_blank"
-                              rel="noopener"
-                              color="inherit"
-                              underline="hover"
-                            >
-                              {selectedAuthor.cv.contact.linkedin}
-                            </Link>
-                          </Box>
-                        </Box>
-                      </Grid>
-
-                      <Grid size={12} sx={{ p: 3 }}>
-                        <Box sx={{ mb: 3 }}>
-                          <Typography
-                            variant="h5"
-                            sx={{
-                              color: "primary.main",
-                              borderBottom: 2,
-                              borderColor: "primary.main",
-                              pb: 1,
-                              mb: 2,
-                            }}
-                          >
-                            Educación
-                          </Typography>
-                          {selectedAuthor.cv.education.map((edu, index) => (
-                            <Box key={index} sx={{ mb: 1.5 }}>
-                              <Typography
-                                variant="h6"
-                                sx={{ fontWeight: "bold" }}
-                              >
-                                {edu.title}
-                              </Typography>
-                              <Typography
-                                variant="subtitle1"
-                                color="text.secondary"
-                              >
-                                {edu.institution} - {edu.year}
-                              </Typography>
-                            </Box>
-                          ))}
-                        </Box>
-
-                        <Box sx={{ mb: 3 }}>
-                          <Typography
-                            variant="h5"
-                            sx={{
-                              color: "primary.main",
-                              borderBottom: 2,
-                              borderColor: "primary.main",
-                              pb: 1,
-                              mb: 2,
-                            }}
-                          >
-                            Experiencia Profesional
-                          </Typography>
-                          {selectedAuthor.cv.experience.map((exp, index) => (
-                            <Box key={index} sx={{ mb: 2 }}>
-                              <Typography
-                                variant="h6"
-                                sx={{ fontWeight: "bold" }}
-                              >
-                                {exp.title} @ {exp.company}
-                              </Typography>
-                              <Typography
-                                variant="caption"
-                                color="text.secondary"
-                                display="block"
-                              >
-                                {exp.period}
-                              </Typography>
-                              <Typography variant="body2">
-                                {exp.description}
-                              </Typography>
-                            </Box>
-                          ))}
-                        </Box>
-
-                        <Box>
-                          <Typography
-                            variant="h5"
-                            sx={{
-                              color: "primary.main",
-                              borderBottom: 2,
-                              borderColor: "primary.main",
-                              pb: 1,
-                              mb: 2,
-                            }}
-                          >
-                            Publicaciones y Reconocimientos
-                          </Typography>
-                          {selectedAuthor.cv.publications.map((pub, index) => (
-                            <Typography
-                              key={index}
-                              variant="body2"
-                              sx={{ mb: 1 }}
-                            >
-                              • {pub}
-                            </Typography>
-                          ))}
-                        </Box>
-                      </Grid>
-                    </Grid>
-                  </>
-                )}
-              </Box>
-            </Fade>
-          </Modal>
         </Container>
       </ThemeProvider>
     </>
