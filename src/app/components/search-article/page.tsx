@@ -27,6 +27,7 @@ import Grid from "@mui/material/Grid";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "@mui/material/Link";
+import Header from "../Header/header";
 
 interface Author {
   name: string;
@@ -216,13 +217,15 @@ El puntaje obtenido evidencia una alta vulnerabilidad. La combinación de constr
   },
   {
     label: "Conclusiones",
-    content: `La edificación presenta alta vulnerabilidad sísmica con un puntaje SL1 = 0.3.
+    content: `El puntaje de la edificación que presenta alta vulnerabilidad sísmica con un puntaje SL1 = 0.3.
 Se requiere una evaluación estructural detallada para definir medidas de reforzamiento.
 Recomendaciones:
  Reforzar elementos verticales y horizontales.
  Sustituir adiciones en madera por materiales normativos.
 Implementar medidas de mitigación para parapetos y elementos no estructurales.
- Promover capacitaciones en construcción sismo-resistente en el sector habitacional.
+ Promover capacitaciones en construcción sismo-resistente en el sector habitacional.’
+A nivel general mas del 90 % de las edificaciones evaluadas requieren una evaluación detallada por un ingeniero estructuralista debido a la mala gestión urbana y la falta de cumplimiento de construcción. Se recomienda concientizar sobre las instalaciones de elementos no estructurales. Se encontraron aires acondicionados instalados en ubicaciones riesgosas tales como zona donde pasan peatonales.
+
 `,
     figures: [],
   },
@@ -243,129 +246,124 @@ Oficina Nacional de Evaluación Sísmica y Vulnerabilidad de Infraestructura y E
 
 const authors: Author[] = [
   {
-    name: "Dra. Elena Ríos",
-    bio: "Maestrante en Ciencias Ambientales con especialización en hidrología y gestión de recursos hídricos. Su investigación se centra en el impacto del cambio climático en los ecosistemas de agua dulce.",
-    avatar: "/images/authors/elena-rios.jpg", // Placeholder path
+    name: "Pablo Jimenez",
+    bio: "Maestrante en  ingeniería Geotecnia y Cimentaciones. Su investigación se centra en Evaluación Sísmica y Vulnerabilidad de las Edificaciones",
+    avatar: "/pablo-jimenez.jpeg", // Placeholder path
     cv: {
-      specialty: "Especialista en Hidrología y Recursos Hídricos",
+      specialty: "Especialista en Estructuras y Geotecnia",
       contact: {
-        email: "elena.rios@example.com",
-        linkedin: "linkedin.com/in/elenarios",
+        email: "pjimenez@tradeenergy.com.do",
+        linkedin: "http://linkedin.com/in/pablo-b-jimenez-perez-456245186",
       },
       education: [
         {
-          title: "Doctorado en Geociencias",
-          institution: "Universidad de la Tierra",
-          year: "2015",
+          title: "Ingeniero Civil",
+          institution: "Universidad Autónoma de Santo Domingo (UASD)",
+          year: "2022",
         },
         {
-          title: "Máster en Gestión Ambiental",
-          institution: "Instituto Global de Sostenibilidad",
-          year: "2011",
+          title:
+            "Presto (Presupuesto, licitaciones, y cubicaciones del Estafo y sector privado",
+          institution: "Presto caribe S.R.L",
+          year: "2022",
         },
       ],
       experience: [
         {
-          title: "Consultora Senior",
-          company: "PNUD",
-          period: "2016 - Presente",
-          description:
-            "Lidero proyectos de resiliencia hídrica en comunidades vulnerables.",
+          title: "Gerente de Operaciones",
+          company: "Inconsaa",
+          period: "2024- Presente",
+          description: "Lideró Operaciones y obras civiles  .",
         },
         {
-          title: "Investigadora Asociada",
-          company: "Centro de Estudios Climáticos",
-          period: "2011 - 2015",
+          title: "Ingeniero de Proyectos",
+          company: "TRADENERGY",
+          period: "2022- 2024",
           description:
-            "Investigación sobre el impacto del cambio climático en ecosistemas de agua dulce.",
+            "Supervisor de proyecto que involucraba la construcción de 1280 apartamentos.",
         },
       ],
       publications: [
-        '"Impacto del Cambio Climático en los Ecosistemas de Agua Dulce", Journal of Hydrology, 2020.',
-        '"Modelos Predictivos de Escasez Hídrica", Nature Climate Change, 2018.',
+        "ANÁLISIS DE ESTABILIDAD Y CONTENCIÓN DE TALUDES PARA ADECUACIÓN DEL TERRENO EN ESTANCIA INFANTIL COTUÍ II, BARRIO VILLA PROGRESO, MUNICIPIO COTUÍ, PROVINCIA SÁNCHEZ RAMÍREZ, REPÚBLICA DOMINICANA. (Tesis), 2022.",
       ],
     },
   },
   {
-    name: "Dr. Carlos Vega",
-    bio: "Profesor titular de Geografía y asesor de la investigación. Experto en sistemas de información geográfica (SIG) aplicados a estudios de sostenibilidad y planificación territorial.",
-    avatar: "/images/authors/carlos-vega.jpg", // Placeholder path
+    name: "Ing. Jose Radhames Montero",
+    bio: "Ingeniero Inspector de Obras con amplia experiencia en supervisión de proyectos de construcción y evaluación estructural. Ha trabajado en múltiples proyectos de infraestructura urbana.",
+    avatar: "/jose-montero.jpg", // Placeholder path
     cv: {
-      specialty: "Experto en SIG y Planificación Territorial",
+      specialty: "Experto en Supervisión y Evaluación Estructural",
       contact: {
-        email: "carlos.vega@example.com",
-        linkedin: "linkedin.com/in/carlosvega",
+        email: "jose142578@gmail.com",
+        linkedin: "www.linkedin.com/in/jrmmontero",
       },
       education: [
         {
-          title: "PhD en Geografía Humana",
-          institution: "Universidad Internacional",
-          year: "2005",
+          title: "Licenciatura en Ingeniería Civil",
+          institution: "Universidad Autónoma de Santo Domingo (UASD)",
+          year: "2022",
         },
       ],
       experience: [
         {
-          title: "Director de Laboratorio",
-          company: "Laboratorio de Geoinformática Aplicada",
-          period: "2010 - Presente",
+          title: "Encargado de Obras",
+          company: "Ebusa Engineering Group",
+          period: "2018 - 2021",
           description:
-            "Dirección de investigaciones sobre desarrollo urbano sostenible usando SIG.",
+            "Encargado de la supervisión y control de calidad en proyectos de torres residenciales y comerciales.",
         },
         {
-          title: "Profesor Titular",
-          company: "Departamento de Geografía",
-          period: "2006 - Presente",
+          title: "Inspector de Obras Por Etapas",
+          company:
+            "Ministerio de la Vivienda, Hábitat y Edificaciones (MIVHED)",
+          period: "2021 - Presente",
           description:
             "Docencia e investigación en geografía y tecnologías geoespaciales.",
         },
       ],
       publications: [
-        '"Cartografía Digital para el Desarrollo Urbano Sostenible" (Libro), 2019.',
-        "Premio Nacional de Ciencia y Tecnología, 2018.",
+        '"• ANÁLISIS DE ESTABILIDAD Y CONTENCIÓN DE TALUDES PARA ADECUACIÓN DEL TERRENO EN ESTANCIA INFANTIL COTUÍ II, BARRIO VILLA PROGRESO, MUNICIPIO HATO NUEVO, PROVINCIA PERAVIA, REPÚBLICA DOMINICANA" (Tesis), 2022.',
       ],
     },
   },
   {
-    name: "Ing. Sofía Moreno",
-    bio: "Ingeniera Civil con especialización en ingeniería sísmica. Su trabajo se enfoca en la evaluación de vulnerabilidad y el diseño de reforzamiento para estructuras existentes.",
-    avatar: "/images/authors/carlos-vega.jpg", // Placeholder path
+    name: "Oscar E. Devers Diaz",
+    bio: "Maestrante en ingenieria en geotecnia y cimentaciones.",
+    avatar: "/oscar-devers.png", // Placeholder path
     cv: {
-      specialty: "Ingeniera Sísmica",
+      specialty: "control de calidad ",
       contact: {
-        email: "sofia.moreno@example.com",
-        linkedin: "linkedin.com/in/sofiamoreno",
+        email: "oscarezedevers@gmail.com",
+        linkedin: "https://www.linkedin.com/in/oscar-e-devers-diaz-7712361a8",
       },
       education: [
         {
-          title: "Maestría en Ingeniería Estructural",
-          institution: "Universidad Politécnica",
-          year: "2018",
+          title: "Ingeniero Civil",
+          institution: "UniversidadAutonoma de Santo Domingo",
+          year: "2023",
         },
         {
-          title: "Grado en Ingeniería Civil",
-          institution: "Universidad Nacional",
-          year: "2016",
+          title: "",
+          institution: "",
+          year: "",
         },
       ],
       experience: [
         {
-          title: "Ingeniera de Proyectos",
-          company: "Estructuras Seguras S.A.",
-          period: "2019 - Presente",
-          description:
-            "Diseño y evaluación de reforzamiento estructural para edificaciones existentes.",
+          title: "Encargado de control de calidad en columnas de grava Geopier",
+          company: "Cimenca",
+          period: "2023 - Presente",
+          description: "Lidero proyectos de mejoramiento de suelos.",
         },
         {
-          title: "Voluntaria",
-          company: "Ingenieros Sin Fronteras",
-          period: "2018 - Presente",
-          description: "Inspección post-sismo en la región del Caribe.",
+          title: "Asociada",
+          company: "",
+          period: "",
+          description: ".",
         },
       ],
-      publications: [
-        "Certificación en metodologías FEMA para evaluación de riesgos.",
-        "Participación en la inspección de más de 200 edificaciones post-sismo.",
-      ],
+      publications: ['".', '".'],
     },
   },
 ];
@@ -515,493 +513,500 @@ export default function InvestigationArticlePage() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container
-        maxWidth="xl"
-        sx={{ my: 0, position: "relative", zIndex: 1 }}
-        className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center"
-      >
-        <Paper
-          elevation={6}
-          sx={{ p: { xs: 2, sm: 3, md: 4 }, backdropFilter: "blur(4px)" }}
+    <>
+      <Header />
+      <ThemeProvider theme={theme}>
+        <Container
+          maxWidth="xl"
+          sx={{ my: 0, position: "relative", zIndex: 1 }}
+          className="bg-[url(/field/edificio.jpeg)] bg-cover bg-fixed bg-center"
         >
-          <Typography
-            variant="h3"
-            component="h1"
-            gutterBottom
-            align="center"
-            sx={{
-              fontWeight: "bold",
-              textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
-              color: "primary.main",
-            }}
+          <Paper
+            elevation={6}
+            sx={{ p: { xs: 2, sm: 3, md: 4 }, backdropFilter: "blur(4px)" }}
           >
-            EVALUACION SISMICA Y VULNERABILIDAD DE LAS EDIFICACIONES EN EL
-            ENSANCHE QUISQUEYA, SANTO DOMINGO, REP. DOM.
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            color="text.secondary"
-            gutterBottom
-            align="center"
-            sx={{ mb: 4 }}
-          >
-            Un estudio de caso sobre la vulnerabilidad estructural en zonas
-            urbanas de Santo Domingo.
-          </Typography>
-
-          <Divider
-            sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
-          />
-
-          <Box>
-            <Typography variant="h5" component="h2" gutterBottom>
-              Autores
+            <Typography
+              variant="h3"
+              component="h1"
+              gutterBottom
+              align="center"
+              sx={{
+                fontWeight: "bold",
+                textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
+                color: "primary.main",
+              }}
+            >
+              EVALUACION SISMICA Y VULNERABILIDAD DE LAS EDIFICACIONES EN EL
+              ENSANCHE QUISQUEYA, SANTO DOMINGO, REP. DOM.
             </Typography>
-            {authors.map((author, index) => (
-              <Box
-                key={`${author.name}-${index}`}
-                sx={{
-                  p: 2,
-                  mb: 2,
-                  borderRadius: 2,
-                  transition: "all 0.3s ease-in-out",
-                  "&:hover": {
-                    backgroundColor: "rgba(255, 87, 34, 0.1)",
-                    boxShadow: `0 0 15px ${theme.palette.primary.main}`,
-                    transform: "scale(1.02)",
-                  },
-                }}
-              >
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Avatar
-                    alt={author.name}
-                    src={author.avatar}
-                    sx={{ width: 60, height: 60, mr: 2 }}
-                  />
-                  <Box sx={{ flexGrow: 1 }}>
-                    <Typography variant="h6" component="h3">
-                      {author.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {author.bio}
-                    </Typography>
-                  </Box>
-                  <Button
-                    variant="text"
-                    onClick={() => handleOpenModal(author)}
-                    sx={{ ml: 2, color: "primary.main", alignSelf: "center" }}
-                  >
-                    Leer más
-                  </Button>
-                </Box>
-              </Box>
-            ))}
-          </Box>
-
-          <Divider
-            sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
-          />
-
-          <Box ref={stepperRef}>
-            <Stepper activeStep={activeStep} orientation="vertical">
-              {(() => {
-                let figureCounter = 0;
-                return articleSteps.map((step, index) => {
-                  const stepFigures = step.figures || [];
-                  const figuresToRender = stepFigures.map((fig) => ({
-                    ...fig,
-                    number: ++figureCounter,
-                  }));
-
-                  return (
-                    <Step key={step.label}>
-                      <StepLabel
-                        optional={
-                          index === articleSteps.length - 1 ? (
-                            <Typography variant="caption">
-                              Último paso
-                            </Typography>
-                          ) : null
-                        }
-                      >
-                        <Typography
-                          sx={{
-                            fontSize: "28px",
-                            fontWeight: "500",
-                            color: "primary.main",
-                          }}
-                        >
-                          {step.label}
-                        </Typography>
-                      </StepLabel>
-                      <StepContent>
-                        <Slide
-                          direction="left"
-                          in={activeStep === index}
-                          timeout={1000}
-                          mountOnEnter
-                          unmountOnExit
-                        >
-                          <Box
-                            sx={{
-                              p: 2,
-                              borderLeft: `2px solid ${theme.palette.primary.main}`,
-                              ml: "12px",
-                              pl: 3,
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                whiteSpace: "pre-line",
-                                fontSize: "1rem",
-                                lineHeight: 1.75,
-                                fontFamily: "serif",
-                                textAlign: "justify",
-                                textJustify: "inter-word",
-                                mb: 4,
-                                ...(step.label ===
-                                  "Referencias Bibliográficas" && {
-                                  textIndent: "-36px",
-                                  paddingLeft: "36px",
-                                }),
-                              }}
-                            >
-                              {step.content}
-                            </Typography>
-
-                            {stepFigures.length > 0 && (
-                              <Grid container spacing={4} sx={{ mt: 2 }}>
-                                {figuresToRender.map((fig) => (
-                                  <Grid size={12} key={fig.number}>
-                                    <ApaFigure
-                                      figure={fig}
-                                      number={fig.number}
-                                    />
-                                  </Grid>
-                                ))}
-                              </Grid>
-                            )}
-
-                            <Box sx={{ mb: 2, mt: 2 }}>
-                              <div>
-                                <Button
-                                  variant="contained"
-                                  onClick={handleNext}
-                                  sx={{ mt: 1, mr: 1 }}
-                                >
-                                  {index === articleSteps.length - 1
-                                    ? "Finalizar"
-                                    : "Siguiente"}
-                                </Button>
-                                <Button
-                                  disabled={index === 0}
-                                  onClick={handleBack}
-                                  sx={{ mt: 1, mr: 1 }}
-                                >
-                                  Atrás
-                                </Button>
-                              </div>
-                            </Box>
-                          </Box>
-                        </Slide>
-                      </StepContent>
-                    </Step>
-                  );
-                });
-              })()}
-            </Stepper>
-            {activeStep === articleSteps.length && (
-              <Paper
-                square
-                elevation={0}
-                sx={{ p: 3, mt: 2, backgroundColor: "rgba(0,0,0,0.3)" }}
-              >
-                <Typography variant="h6" gutterBottom>
-                  Ha completado la lectura del artículo.
-                </Typography>
-                <Typography>
-                  Gracias por revisar el estudio. Puede volver al inicio para
-                  leerlo de nuevo.
-                </Typography>
-                <Button onClick={handleReset} sx={{ mt: 2 }} variant="outlined">
-                  Volver al inicio
-                </Button>
-              </Paper>
-            )}
-          </Box>
-
-          <Divider
-            sx={{ my: 5, borderColor: "primary.main", borderWidth: "1px" }}
-          />
-
-          <Box component="section">
-            <Typography variant="h5" component="h2" gutterBottom>
-              Discusión y Comentarios
+            <Typography
+              variant="subtitle1"
+              color="text.secondary"
+              gutterBottom
+              align="center"
+              sx={{ mb: 4 }}
+            >
+              Un estudio de caso sobre la vulnerabilidad estructural en zonas
+              urbanas de Santo Domingo.
             </Typography>
-            <Box sx={{ my: 3 }}>
-              {comments.map((comment, index) => (
-                <Paper
-                  key={index}
-                  variant="outlined"
+
+            <Divider
+              sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
+            />
+
+            <Box>
+              <Typography variant="h5" component="h2" gutterBottom>
+                Autores
+              </Typography>
+              {authors.map((author, index) => (
+                <Box
+                  key={`${author.name}-${index}`}
                   sx={{
                     p: 2,
                     mb: 2,
-                    backgroundColor: "rgba(255,255,255,0.05)",
+                    borderRadius: 2,
+                    transition: "all 0.3s ease-in-out",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 87, 34, 0.1)",
+                      boxShadow: `0 0 15px ${theme.palette.primary.main}`,
+                      transform: "scale(1.02)",
+                    },
                   }}
                 >
-                  <Typography
-                    variant="subtitle2"
-                    component="p"
-                    sx={{ fontWeight: "bold" }}
-                  >
-                    {comment.author}
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    color="text.secondary"
-                    display="block"
-                    gutterBottom
-                  >
-                    {comment.date}
-                  </Typography>
-                  <Typography variant="body2">{comment.text}</Typography>
-                </Paper>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Avatar
+                      alt={author.name}
+                      src={author.avatar}
+                      sx={{ width: 60, height: 60, mr: 2 }}
+                    />
+                    <Box sx={{ flexGrow: 1 }}>
+                      <Typography variant="h6" component="h3">
+                        {author.name}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {author.bio}
+                      </Typography>
+                    </Box>
+                    <Button
+                      variant="text"
+                      onClick={() => handleOpenModal(author)}
+                      sx={{ ml: 2, color: "primary.main", alignSelf: "center" }}
+                    >
+                      Leer más
+                    </Button>
+                  </Box>
+                </Box>
               ))}
             </Box>
-            <Box
-              component="form"
-              onSubmit={handleCommentSubmit}
-              noValidate
-              sx={{ mt: 1 }}
-            >
-              <Typography variant="h6" component="h3" gutterBottom>
-                Dejar un comentario
-              </Typography>
-              <TextField
-                label="Escriba su comentario aquí"
-                multiline
-                rows={4}
-                fullWidth
-                value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
-                variant="outlined"
-                margin="normal"
-              />
-              <Button type="submit" variant="contained" sx={{ mt: 1 }}>
-                Publicar Comentario
-              </Button>
-            </Box>
-          </Box>
-        </Paper>
 
-        <Modal
-          aria-labelledby="author-cv-modal-title"
-          aria-describedby="author-cv-modal-description"
-          open={openModal}
-          onClose={handleCloseModal}
-          closeAfterTransition
-          slots={{ backdrop: Backdrop }}
-          slotProps={{
-            backdrop: {
-              timeout: 500,
-            },
-          }}
-        >
-          <Fade in={openModal}>
-            <Box sx={modalStyle}>
-              {selectedAuthor && (
-                <>
-                  <Grid container>
-                    <Grid
-                      size={12}
-                      sx={{
-                        bgcolor: "primary.main",
-                        p: 3,
-                        color: "white",
-                        display: "flex",
-                        flexDirection: "column",
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          textAlign: "center",
-                        }}
-                      >
-                        <Avatar
-                          alt={selectedAuthor.name}
-                          src={selectedAuthor.avatar}
-                          sx={{
-                            width: 150,
-                            height: 150,
-                            mb: 2,
-                            border: "4px solid white",
-                          }}
-                        />
-                        <Typography
-                          variant="h4"
-                          component="h2"
-                          sx={{ fontWeight: "bold" }}
-                        >
-                          {selectedAuthor.name}
-                        </Typography>
-                        <Typography variant="h6" sx={{ mb: 3 }}>
-                          {selectedAuthor.cv.specialty}
-                        </Typography>
+            <Divider
+              sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
+            />
 
-                        <Divider
-                          sx={{
-                            bgcolor: "rgba(255,255,255,0.5)",
-                            width: "100%",
-                            my: 2,
-                          }}
-                        />
+            <Box ref={stepperRef}>
+              <Stepper activeStep={activeStep} orientation="vertical">
+                {(() => {
+                  let figureCounter = 0;
+                  return articleSteps.map((step, index) => {
+                    const stepFigures = step.figures || [];
+                    const figuresToRender = stepFigures.map((fig) => ({
+                      ...fig,
+                      number: ++figureCounter,
+                    }));
 
-                        <Typography
-                          variant="h6"
-                          sx={{ alignSelf: "flex-start", mb: 1 }}
+                    return (
+                      <Step key={step.label}>
+                        <StepLabel
+                          optional={
+                            index === articleSteps.length - 1 ? (
+                              <Typography variant="caption">
+                                Último paso
+                              </Typography>
+                            ) : null
+                          }
                         >
-                          Contacto
-                        </Typography>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            mb: 1,
-                            alignSelf: "flex-start",
-                          }}
-                        >
-                          <EmailIcon sx={{ mr: 1 }} />
-                          <Link
-                            href={`mailto:${selectedAuthor.cv.contact.email}`}
-                            color="inherit"
-                            underline="hover"
-                          >
-                            {selectedAuthor.cv.contact.email}
-                          </Link>
-                        </Box>
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            alignSelf: "flex-start",
-                          }}
-                        >
-                          <LinkedInIcon sx={{ mr: 1 }} />
-                          <Link
-                            href={`https://${selectedAuthor.cv.contact.linkedin}`}
-                            target="_blank"
-                            rel="noopener"
-                            color="inherit"
-                            underline="hover"
-                          >
-                            {selectedAuthor.cv.contact.linkedin}
-                          </Link>
-                        </Box>
-                      </Box>
-                    </Grid>
-
-                    <Grid size={12} sx={{ p: 3 }}>
-                      <Box sx={{ mb: 3 }}>
-                        <Typography
-                          variant="h5"
-                          sx={{
-                            color: "primary.main",
-                            borderBottom: 2,
-                            borderColor: "primary.main",
-                            pb: 1,
-                            mb: 2,
-                          }}
-                        >
-                          Educación
-                        </Typography>
-                        {selectedAuthor.cv.education.map((edu, index) => (
-                          <Box key={index} sx={{ mb: 1.5 }}>
-                            <Typography
-                              variant="h6"
-                              sx={{ fontWeight: "bold" }}
-                            >
-                              {edu.title}
-                            </Typography>
-                            <Typography
-                              variant="subtitle1"
-                              color="text.secondary"
-                            >
-                              {edu.institution} - {edu.year}
-                            </Typography>
-                          </Box>
-                        ))}
-                      </Box>
-
-                      <Box sx={{ mb: 3 }}>
-                        <Typography
-                          variant="h5"
-                          sx={{
-                            color: "primary.main",
-                            borderBottom: 2,
-                            borderColor: "primary.main",
-                            pb: 1,
-                            mb: 2,
-                          }}
-                        >
-                          Experiencia Profesional
-                        </Typography>
-                        {selectedAuthor.cv.experience.map((exp, index) => (
-                          <Box key={index} sx={{ mb: 2 }}>
-                            <Typography
-                              variant="h6"
-                              sx={{ fontWeight: "bold" }}
-                            >
-                              {exp.title} @ {exp.company}
-                            </Typography>
-                            <Typography
-                              variant="caption"
-                              color="text.secondary"
-                              display="block"
-                            >
-                              {exp.period}
-                            </Typography>
-                            <Typography variant="body2">
-                              {exp.description}
-                            </Typography>
-                          </Box>
-                        ))}
-                      </Box>
-
-                      <Box>
-                        <Typography
-                          variant="h5"
-                          sx={{
-                            color: "primary.main",
-                            borderBottom: 2,
-                            borderColor: "primary.main",
-                            pb: 1,
-                            mb: 2,
-                          }}
-                        >
-                          Publicaciones y Reconocimientos
-                        </Typography>
-                        {selectedAuthor.cv.publications.map((pub, index) => (
                           <Typography
-                            key={index}
-                            variant="body2"
-                            sx={{ mb: 1 }}
+                            sx={{
+                              fontSize: "28px",
+                              fontWeight: "500",
+                              color: "primary.main",
+                            }}
                           >
-                            • {pub}
+                            {step.label}
                           </Typography>
-                        ))}
-                      </Box>
-                    </Grid>
-                  </Grid>
-                </>
+                        </StepLabel>
+                        <StepContent>
+                          <Slide
+                            direction="left"
+                            in={activeStep === index}
+                            timeout={1000}
+                            mountOnEnter
+                            unmountOnExit
+                          >
+                            <Box
+                              sx={{
+                                p: 2,
+                                borderLeft: `2px solid ${theme.palette.primary.main}`,
+                                ml: "12px",
+                                pl: 3,
+                              }}
+                            >
+                              <Typography
+                                sx={{
+                                  whiteSpace: "pre-line",
+                                  fontSize: "1rem",
+                                  lineHeight: 1.75,
+                                  fontFamily: "serif",
+                                  textAlign: "justify",
+                                  textJustify: "inter-word",
+                                  mb: 4,
+                                  ...(step.label ===
+                                    "Referencias Bibliográficas" && {
+                                    textIndent: "-36px",
+                                    paddingLeft: "36px",
+                                  }),
+                                }}
+                              >
+                                {step.content}
+                              </Typography>
+
+                              {stepFigures.length > 0 && (
+                                <Grid container spacing={4} sx={{ mt: 2 }}>
+                                  {figuresToRender.map((fig) => (
+                                    <Grid size={12} key={fig.number}>
+                                      <ApaFigure
+                                        figure={fig}
+                                        number={fig.number}
+                                      />
+                                    </Grid>
+                                  ))}
+                                </Grid>
+                              )}
+
+                              <Box sx={{ mb: 2, mt: 2 }}>
+                                <div>
+                                  <Button
+                                    variant="contained"
+                                    onClick={handleNext}
+                                    sx={{ mt: 1, mr: 1 }}
+                                  >
+                                    {index === articleSteps.length - 1
+                                      ? "Finalizar"
+                                      : "Siguiente"}
+                                  </Button>
+                                  <Button
+                                    disabled={index === 0}
+                                    onClick={handleBack}
+                                    sx={{ mt: 1, mr: 1 }}
+                                  >
+                                    Atrás
+                                  </Button>
+                                </div>
+                              </Box>
+                            </Box>
+                          </Slide>
+                        </StepContent>
+                      </Step>
+                    );
+                  });
+                })()}
+              </Stepper>
+              {activeStep === articleSteps.length && (
+                <Paper
+                  square
+                  elevation={0}
+                  sx={{ p: 3, mt: 2, backgroundColor: "rgba(0,0,0,0.3)" }}
+                >
+                  <Typography variant="h6" gutterBottom>
+                    Ha completado la lectura del artículo.
+                  </Typography>
+                  <Typography>
+                    Gracias por revisar el estudio. Puede volver al inicio para
+                    leerlo de nuevo.
+                  </Typography>
+                  <Button
+                    onClick={handleReset}
+                    sx={{ mt: 2 }}
+                    variant="outlined"
+                  >
+                    Volver al inicio
+                  </Button>
+                </Paper>
               )}
             </Box>
-          </Fade>
-        </Modal>
-      </Container>
-    </ThemeProvider>
+
+            <Divider
+              sx={{ my: 5, borderColor: "primary.main", borderWidth: "1px" }}
+            />
+
+            <Box component="section">
+              <Typography variant="h5" component="h2" gutterBottom>
+                Discusión y Comentarios
+              </Typography>
+              <Box sx={{ my: 3 }}>
+                {comments.map((comment, index) => (
+                  <Paper
+                    key={index}
+                    variant="outlined"
+                    sx={{
+                      p: 2,
+                      mb: 2,
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                    }}
+                  >
+                    <Typography
+                      variant="subtitle2"
+                      component="p"
+                      sx={{ fontWeight: "bold" }}
+                    >
+                      {comment.author}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      color="text.secondary"
+                      display="block"
+                      gutterBottom
+                    >
+                      {comment.date}
+                    </Typography>
+                    <Typography variant="body2">{comment.text}</Typography>
+                  </Paper>
+                ))}
+              </Box>
+              <Box
+                component="form"
+                onSubmit={handleCommentSubmit}
+                noValidate
+                sx={{ mt: 1 }}
+              >
+                <Typography variant="h6" component="h3" gutterBottom>
+                  Dejar un comentario
+                </Typography>
+                <TextField
+                  label="Escriba su comentario aquí"
+                  multiline
+                  rows={4}
+                  fullWidth
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  variant="outlined"
+                  margin="normal"
+                />
+                <Button type="submit" variant="contained" sx={{ mt: 1 }}>
+                  Publicar Comentario
+                </Button>
+              </Box>
+            </Box>
+          </Paper>
+
+          <Modal
+            aria-labelledby="author-cv-modal-title"
+            aria-describedby="author-cv-modal-description"
+            open={openModal}
+            onClose={handleCloseModal}
+            closeAfterTransition
+            slots={{ backdrop: Backdrop }}
+            slotProps={{
+              backdrop: {
+                timeout: 500,
+              },
+            }}
+          >
+            <Fade in={openModal}>
+              <Box sx={modalStyle}>
+                {selectedAuthor && (
+                  <>
+                    <Grid container>
+                      <Grid
+                        size={12}
+                        sx={{
+                          bgcolor: "primary.main",
+                          p: 3,
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            textAlign: "center",
+                          }}
+                        >
+                          <Avatar
+                            alt={selectedAuthor.name}
+                            src={selectedAuthor.avatar}
+                            sx={{
+                              width: 150,
+                              height: 150,
+                              mb: 2,
+                              border: "4px solid white",
+                            }}
+                          />
+                          <Typography
+                            variant="h4"
+                            component="h2"
+                            sx={{ fontWeight: "bold" }}
+                          >
+                            {selectedAuthor.name}
+                          </Typography>
+                          <Typography variant="h6" sx={{ mb: 3 }}>
+                            {selectedAuthor.cv.specialty}
+                          </Typography>
+
+                          <Divider
+                            sx={{
+                              bgcolor: "rgba(255,255,255,0.5)",
+                              width: "100%",
+                              my: 2,
+                            }}
+                          />
+
+                          <Typography
+                            variant="h6"
+                            sx={{ alignSelf: "flex-start", mb: 1 }}
+                          >
+                            Contacto
+                          </Typography>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              mb: 1,
+                              alignSelf: "flex-start",
+                            }}
+                          >
+                            <EmailIcon sx={{ mr: 1 }} />
+                            <Link
+                              href={`mailto:${selectedAuthor.cv.contact.email}`}
+                              color="inherit"
+                              underline="hover"
+                            >
+                              {selectedAuthor.cv.contact.email}
+                            </Link>
+                          </Box>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              alignSelf: "flex-start",
+                            }}
+                          >
+                            <LinkedInIcon sx={{ mr: 1 }} />
+                            <Link
+                              href={`https://${selectedAuthor.cv.contact.linkedin}`}
+                              target="_blank"
+                              rel="noopener"
+                              color="inherit"
+                              underline="hover"
+                            >
+                              {selectedAuthor.cv.contact.linkedin}
+                            </Link>
+                          </Box>
+                        </Box>
+                      </Grid>
+
+                      <Grid size={12} sx={{ p: 3 }}>
+                        <Box sx={{ mb: 3 }}>
+                          <Typography
+                            variant="h5"
+                            sx={{
+                              color: "primary.main",
+                              borderBottom: 2,
+                              borderColor: "primary.main",
+                              pb: 1,
+                              mb: 2,
+                            }}
+                          >
+                            Educación
+                          </Typography>
+                          {selectedAuthor.cv.education.map((edu, index) => (
+                            <Box key={index} sx={{ mb: 1.5 }}>
+                              <Typography
+                                variant="h6"
+                                sx={{ fontWeight: "bold" }}
+                              >
+                                {edu.title}
+                              </Typography>
+                              <Typography
+                                variant="subtitle1"
+                                color="text.secondary"
+                              >
+                                {edu.institution} - {edu.year}
+                              </Typography>
+                            </Box>
+                          ))}
+                        </Box>
+
+                        <Box sx={{ mb: 3 }}>
+                          <Typography
+                            variant="h5"
+                            sx={{
+                              color: "primary.main",
+                              borderBottom: 2,
+                              borderColor: "primary.main",
+                              pb: 1,
+                              mb: 2,
+                            }}
+                          >
+                            Experiencia Profesional
+                          </Typography>
+                          {selectedAuthor.cv.experience.map((exp, index) => (
+                            <Box key={index} sx={{ mb: 2 }}>
+                              <Typography
+                                variant="h6"
+                                sx={{ fontWeight: "bold" }}
+                              >
+                                {exp.title} @ {exp.company}
+                              </Typography>
+                              <Typography
+                                variant="caption"
+                                color="text.secondary"
+                                display="block"
+                              >
+                                {exp.period}
+                              </Typography>
+                              <Typography variant="body2">
+                                {exp.description}
+                              </Typography>
+                            </Box>
+                          ))}
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            variant="h5"
+                            sx={{
+                              color: "primary.main",
+                              borderBottom: 2,
+                              borderColor: "primary.main",
+                              pb: 1,
+                              mb: 2,
+                            }}
+                          >
+                            Publicaciones y Reconocimientos
+                          </Typography>
+                          {selectedAuthor.cv.publications.map((pub, index) => (
+                            <Typography
+                              key={index}
+                              variant="body2"
+                              sx={{ mb: 1 }}
+                            >
+                              • {pub}
+                            </Typography>
+                          ))}
+                        </Box>
+                      </Grid>
+                    </Grid>
+                  </>
+                )}
+              </Box>
+            </Fade>
+          </Modal>
+        </Container>
+      </ThemeProvider>
+    </>
   );
 }
