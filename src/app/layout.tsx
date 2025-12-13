@@ -4,7 +4,6 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import Header from "./components/Header/header";
 import Footer from "./components/Footer/footer";
 import { SessionProvider } from "next-auth/react";
 
@@ -24,7 +23,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className=" h-fit w-fit text-black antialiased">
+      <body className=" h-fit  w-full text-black antialiased pt-10">
         <SessionProvider>
           <TRPCReactProvider>{children}</TRPCReactProvider>
           <Footer />
