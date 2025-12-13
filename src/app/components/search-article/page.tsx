@@ -26,6 +26,7 @@ import Backdrop from "@mui/material/Backdrop";
 import Grid from "@mui/material/Grid";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import Link from "@mui/material/Link";
 import Header from "../Header/header";
 
@@ -498,12 +499,6 @@ export default function InvestigationArticlePage() {
     }
   };
 
-  const [openModal, setOpenModal] = React.useState(false);
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-  };
-
   return (
     <>
       <Header />
@@ -583,6 +578,29 @@ export default function InvestigationArticlePage() {
                   </Box>
                 </Box>
               ))}
+            </Box>
+
+            <Divider
+              sx={{ my: 4, borderColor: "primary.main", borderWidth: "1px" }}
+            />
+
+            <Box component="section" sx={{ textAlign: "center", my: 4 }}>
+              <Typography variant="h5" component="h2" gutterBottom>
+                Video Explicativo
+              </Typography>
+              <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                Vea un resumen en video de este artículo de investigación.
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                startIcon={<PlayCircleOutlineIcon />}
+                href="https://1drv.ms/v/c/d9beab85bd96af20/IQBcSW3prc4IToS9EyrEOgRgAVwDkHTmCB-aTXmzdxfwPSE?e=b3w4sk" // TODO: Reemplazar con el link real del video
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver Video
+              </Button>
             </Box>
 
             <Divider

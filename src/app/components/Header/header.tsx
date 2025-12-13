@@ -18,7 +18,7 @@ import MenuItem from "@mui/material/MenuItem";
 const pages = [
   { name: "Home", href: "/" },
   { name: "Sobre Nosotros", href: "/aboutUs" },
-  { name: "Contacto", href: "/report" },
+  { name: "Contacto", href: "/contactUs" },
 ];
 
 function Header() {
@@ -44,7 +44,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#1a1a1a" }}>
+    <AppBar position="absolute" sx={{ backgroundColor: "#1a1a1a" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
